@@ -1,0 +1,8 @@
+#lamborghini
+3 0 97
+#little
+3 13 84
+#mary
+97 3 0
+%%%%%%%%%%
+mary had a little lamborghini

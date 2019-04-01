@@ -1,0 +1,31 @@
+Programmikng, Problem Solving, and Abstraction
+
+Exercise 13.2
+
+Using w_s=1 bit for a sign, w_e=3 bits for a exponent, and w_m=12
+bits for a mantissa (as in Table 13.4): 
+
+2.0 = 0.5 x 2^2 = 0.1 (binary) x 2^{10} (binary)
+	s = 0
+	e = 010
+	m = 1000 0000 0000
+
+	So overall, 0010 1000 0000 0000, or 2800 hexadecimal
+
+(note that in this simple example representation the first bit of the
+mantissa will always be one, because of the binary normalization, but
+is being stored too, wasting a bit.)
+
+-2.5 = - 0.625 x 2^2 = 0.101 (binary) x 2^{10} (binary)
+	s = 1
+	e = 010
+	m = 1010 0000 0000
+
+	So overall, 1010 1010 0000 0000, or AA00 hexadecimal
+
+7.875 = 0.984375 x 2^3 = 0.111111 (binary) x 2^{11} (binary)
+	s = 0
+	e = 011
+	m = 1111 1100 0000
+
+	So overall, 0011 1111 1100 0000, or 3FC0 hexadecimal

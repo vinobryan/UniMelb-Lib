@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+            "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE>Project Coding Guidelines
+</TITLE>
+
+<META http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<META name="GENERATOR" content="hevea 1.10">
+<STYLE type="text/css">
+.li-itemize{margin:1ex 0ex;}
+.li-enumerate{margin:1ex 0ex;}
+.dd-description{margin:0ex 0ex 1ex 4ex;}
+.dt-description{margin:0ex;}
+.toc{list-style:none;}
+.thefootnotes{text-align:left;margin:0ex;}
+.dt-thefootnotes{margin:0em;}
+.dd-thefootnotes{margin:0em 0em 0em 2em;}
+.footnoterule{margin:1em auto 1em 0px;width:50%;}
+.caption{padding-left:2ex; padding-right:2ex; margin-left:auto; margin-right:auto}
+.title{margin:2ex auto;text-align:center}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+.flushleft{text-align:left;margin-left:0ex;margin-right:auto;}
+.flushright{text-align:right;margin-left:auto;margin-right:0ex;}
+DIV TABLE{margin-left:inherit;margin-right:inherit;}
+PRE{text-align:left;margin-left:0ex;margin-right:auto;}
+BLOCKQUOTE{margin-left:4ex;margin-right:4ex;text-align:left;}
+TD P{margin:0px;}
+.boxed{border:1px solid black}
+.textboxed{border:1px solid black}
+.vbar{border:none;width:2px;background-color:black;}
+.hbar{border:none;height:2px;width:100%;background-color:black;}
+.hfill{border:none;height:1px;width:200%;background-color:black;}
+.vdisplay{border-collapse:separate;border-spacing:2px;width:auto; empty-cells:show; border:2px solid red;}
+.vdcell{white-space:nowrap;padding:0px;width:auto; border:2px solid green;}
+.display{border-collapse:separate;border-spacing:2px;width:auto; border:none;}
+.dcell{white-space:nowrap;padding:0px;width:auto; border:none;}
+.dcenter{margin:0ex auto;}
+.vdcenter{border:solid #FF8000 2px; margin:0ex auto;}
+.minipage{text-align:left; margin-left:0em; margin-right:auto;}
+.marginpar{border:solid thin black; width:20%; text-align:left;}
+.marginparleft{float:left; margin-left:0ex; margin-right:1ex;}
+.marginparright{float:right; margin-left:1ex; margin-right:0ex;}
+.theorem{text-align:left;margin:1ex auto 1ex 0ex;}
+.part{margin:2ex auto;text-align:center}
+</STYLE>
+</HEAD>
+<BODY >
+<!--HEVEA command line is: /usr/bin/hevea codingstandards.tex -->
+<!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Project Coding Guidelines</H1><H3 CLASS="titlerest">Peter Schachte</H3></TD></TR>
+</TABLE><BLOCKQUOTE CLASS="quote">
+<EM>Commenting your code is like cleaning your bathroom &#X2014;
+you never want to do it, but it really does create a more pleasant
+experience for you and your guests.</EM><BR>
+ &#XA0;&#XA0;&#XA0;&#XA0;&#XA0; &#X2014; Ryan Campbell
+</BLOCKQUOTE><P>Of course, your project submissions should closely follow the project
+specification. But that is not enough to get
+full marks for a programming project &#X2014; programs are also assessed on how
+well-written they are. In the real world, programs must be
+<EM>maintained</EM>, which means they must be read and understood by people
+other than the original author. </P><P>Try taking the cold reader test: pretend you have not seen your program
+before and consider how easy it is to understand. One good way to improve
+your coding is to make a habit of reading other people&#X2019;s code. Learn what
+makes code a pleasure to read and what makes it a chore.</P><P>This document lists a few factors that contribute to code quality. It is
+intended to be programming language independent, so we use the term
+<EM>operation</EM> to refer to whatever operational abstractions are provided
+by the language, whether they be procedures, functions, methods, predicates
+or even macros.</P><P>Each of these guidelines has exceptions, but you should know when you are
+violating them, and have a very good reason.</P><!--TOC section Documentation-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>&#XA0;&#XA0;Documentation</H2><!--SEC END --><P>
+<A NAME="sec:doc"></A></P><P>Probably the most important factor in code quality is how well documented
+your code is. By &#X201C;documentation&#X201D; here we refer not to supporting
+documentation for your project, such as a System Requirements Specification.
+Nor are we referring to end-user documentation, explaining how to use the
+code. Such documentation is important, but it lies outside the scope of this
+discussion. Here we refer to the documentation embedded in the code as
+comments.</P><!--TOC subsection Sign your work-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc2">1.1</A>&#XA0;&#XA0;Sign your work</H3><!--SEC END --><P>
+At or very near the top of every source code file should be a few lines that
+identify the programmer(s) and the file. It should contain your name, your
+departmental login id, and a one or two line summary of the purpose of the
+file. If you are using a version control system such as CVS or Subversion,
+it should also include the magic keyword to show the file date and version.
+This is very useful in distinguishing printouts of different versions of the
+file.</P><!--TOC subsection First things first-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc3">1.2</A>&#XA0;&#XA0;First things first</H3><!--SEC END --><P>
+After this, the next thing to appear in a source file should explain the
+purpose of the file in greater depth. It does not need to cover every
+detail, but should well prepare the reader to read the code. It should
+explain the role of that file in the overall program and any important
+assumptions the implementation makes. For the main program file, it should
+also explain the purpose of the program and the problem it solves. Do not
+assume the reader knows what the code is for.</P><!--TOC subsection What kinds of data?-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc4">1.3</A>&#XA0;&#XA0;What kinds of data?</H3><!--SEC END --><P>
+It is also important to document the major data structures declared in each
+file, outlining how each is used, preferably next to its declaration. For a
+typeless language, where data types are not declared, this documentation
+should be placed where you would put the declaration if there were one. Do
+not duplicate this documentation everywhere the type is used.</P><!--TOC subsection What does it do?-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc5">1.4</A>&#XA0;&#XA0;What does it do?</H3><!--SEC END --><P>
+Each major operation should also be documented. This must include any
+assumptions made by the implementation (other than what is made clear by the
+types), as well as any changes it makes to its arguments or other data. It
+is common to put this documentation in front of the code it documents, but
+some programming languages may suggest an alternative convention for this.</P><!--TOC subsection Anticipate questions-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc6">1.5</A>&#XA0;&#XA0;Anticipate questions</H3><!--SEC END --><P>
+Recalling the cold reader test, file documentation should try to answer
+questions a reader might have before she has them. For example, if a
+particular algorithm has some subtleties, they should be documented before
+the subtle code. Where the correctness of a piece of code relies on some
+non-obvious analysis, that should be made clear. Similarly, important
+properties of variables that hold at a particular point in the code through
+all iterations (&#X201C;loop invariants&#X201D;), and indeed anything non-obvious that is
+important to understand the code, should be documented.</P><!--TOC subsection Make it pretty-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc7">1.6</A>&#XA0;&#XA0;Make it pretty</H3><!--SEC END --><P>
+A program need not be a work of art, but spending a little time tidying it up
+can make it much more readable. Lines should not be more than 79 columns, or
+they will probably wrap around when it is printed, making they code very
+difficult to read.</P><P>You should assume tab stops will be placed every 8 columns, this is the usual
+default. That usually means that indenting nested code by a full tab stop
+for each level of nesting will make it difficult to avoid violating the 79
+column limit.</P><!--TOC subsection Consistency-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc8">1.7</A>&#XA0;&#XA0;Consistency</H3><!--SEC END --><P>
+Establish conventions for code layout, commenting style, identifier naming,
+<I>etc.</I>, and stick to it. Being consistent with your style is more
+important than the actual style you choose. This is more difficult, and more
+important, when the code is developed by different programmers. Explicitly
+establishing coding conventions at the start of a team project can save a lot
+of trouble later.</P><!--TOC subsection Department of redundancy department-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc9">1.8</A>&#XA0;&#XA0;Department of redundancy department</H3><!--SEC END --><P>
+Don&#X2019;t document anything that should be obvious to anyone who knows the
+programming language reasonably well. Usually code is more succinct and
+precise than any documentation you could write. Documenting the obvious
+makes the program harder to read, because it makes it longer without making
+it clearer. High level documentation is much more important than
+documentation of individual lines of code.</P><!--TOC section Coding-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc10">2</A>&#XA0;&#XA0;Coding</H2><!--SEC END --><!--TOC subsection Organise!-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc11">2.1</A>&#XA0;&#XA0;Organise!</H3><!--SEC END --><P>
+Code and data declarations should be presented in a file in the same way a
+journalist presents an article: the most important part comes first, with
+details presented later. A long program file, like a long article, should be
+divided into sections, where each section covers a particular aspect of the
+overall picture. Each section of code should include an introductory comment
+visually separating it from the previous section, and briefly describing its
+purpose. This puts closely related code close together, and establishes a
+context for each chunk of code. It also makes the program easier to develop
+and maintain, as it makes it easier to find code you&#X2019;ve already written and
+need to modify.</P><P>Some languages permit you to define operations in any order, making it easier
+to organise your code as you&#X2019;d like. For other languages, you just have to
+do your best using forward declarations or other language-specific features
+to organise the code understandably.</P><!--TOC subsection Abstract!-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc12">2.2</A>&#XA0;&#XA0;Abstract!</H3><!--SEC END --><P>
+If you find yourself writing similar code repeatedly, you should look for a
+way to abstract it into a separate piece of code that can be invoked from
+many places in your code. Use parameters to allow differences among the
+uses. This has several advantages over cut-and-paste programming: the code
+is easier to understand because it is clear how different uses differ (it is
+much harder to see a small difference between two 20 line code sequences than
+between two 1-line function calls). Since the code only appears in one
+place, this also makes it much easier to make changes to the code.</P><P>There are many approaches to choosing the best abstractions to use for your
+task; we cannot cover them adequately here. One approach that may help is to
+try to choose the abstractions that are the simplest to explain.</P><!--TOC subsection Self-documenting code-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc13">2.3</A>&#XA0;&#XA0;Self-documenting code</H3><!--SEC END --><P>
+Each function, method, or predicate should have a well-defined purpose, and
+its name should reflect that purpose. This may affect the way you abstract a
+particular chunk of code. Names should also be chosen to distinguish similar
+functionality; for example, <TT>biggest_region</TT> and
+<TT>largest_region</TT> do not convey a distinction, whereas
+<TT>tallest_region</TT> and <TT>widest_region</TT> do.</P><P>The same is true of constants. Do not litter your source code with constants
+such as 12 or 7, instead define symbolic constants such as
+<TT>MONTHS_PER_YEAR</TT> and <TT>DAYS_PER_WEEK</TT>. Note that the names
+must be meaningful; using <TT>DOZEN</TT> in place of 12 is not helpful. It
+is generally not necessary to define symbolic constants for values with
+obvious meanings such as 0 or 1, nor where there is no useful name, such as
+the 2 and 4 in the quadratic formula.</P><P>A well-chosen name is better than a clear comment near the definition, because
+it necessarily appears everywhere it is used.</P><!--TOC subsection Brevity is the soul of coding-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc14">2.4</A>&#XA0;&#XA0;Brevity is the soul of coding</H3><!--SEC END --><P>
+Names need not be terribly long. When a name is too long, code can become
+difficult to indent properly. Often you can rephrase, abbreviate, and omit
+words from a name, without sacrificing clarity.</P><P>By the same token, individual operation definitions should not be too long.
+It is difficult to understand a chunk of code when you cannot see it all at
+once, so it is best to keep individual definitions to less than 60 lines. If
+a definition gets longer than this, abstract out key parts of it into
+separate operations.</P><!--TOC subsection Consistency-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc15">2.5</A>&#XA0;&#XA0;Consistency</H3><!--SEC END --><P>
+Be consistent in your coding, particularly in choosing identifiers. For
+example, don&#X2019;t call a line count <TT>line_count</TT> in one place in your
+code, and <TT>num_lines</TT> in another. Use the same
+variable names for the same kinds of entities throughout your code.
+Use the same abbreviations and capitalisation everywhere.</P><P>Many programming languages have established coding conventions for naming,
+capitalisation, and even code layout. It is best to observe these
+conventions, even if you don&#X2019;t like them, because it makes it easier to read
+your code for readers who know the language conventions. Similarly,
+different languages have idiosyncratic ways to do things, and you should
+follow those conventions where appropriate. Where there are no
+widely agreed conventions, feel free to follow your own taste, but do so
+consistently.</P><!--TOC subsection The right tool for the job-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc16">2.6</A>&#XA0;&#XA0;The right tool for the job</H3><!--SEC END --><P>
+Use the most appropriate language construct, primitive, or library operation
+for the purpose at hand. Do not re-invent the wheel &#X2014; if an operation
+similar to what you need is already defined, use it rather than writing your
+own.</P><!--TOC subsection Keep it simple-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc17">2.7</A>&#XA0;&#XA0;Keep it simple</H3><!--SEC END --><P>
+Try to find the simplest, most succinct way to implement your operations. If
+performance or other considerations force you to complicate the definition,
+so be it. But it&#X2019;s usually worth trying the simplest approach first &#X2014; you
+may be surprised how effective it is.</P><!--CUT END -->
+<!--HTMLFOOT-->
+<!--ENDHTML-->
+<!--FOOTER-->
+<HR SIZE=2><BLOCKQUOTE CLASS="quote"><EM>This document was translated from L<sup>A</sup>T<sub>E</sub>X by
+</EM><A HREF="http://hevea.inria.fr/index.html"><EM>H</EM><EM><FONT SIZE=2><sup>E</sup></FONT></EM><EM>V</EM><EM><FONT SIZE=2><sup>E</sup></FONT></EM><EM>A</EM></A><EM>.</EM></BLOCKQUOTE></BODY>
+</HTML>

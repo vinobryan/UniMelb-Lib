@@ -1,0 +1,19 @@
+John Aalberg --> ID:7 Sex:M || Age:31 || Height:183 || Weight:72 || Team:United States|| NOC:USA || Games:1992 Winter || Year:1992 || Season:Winter || City:Albertville || Sport:Cross Country Skiing ||Event:Cross Country Skiing Men's 10 kilometres || Medal:NA
+
+asd --> NOTFOUND
+John Aalberg --> ID:7 Sex:M || Age:31 || Height:183 || Weight:72 || Team:United States|| NOC:USA || Games:1992 Winter || Year:1992 || Season:Winter || City:Albertville || Sport:Cross Country Skiing ||Event:Cross Country Skiing Men's 10 kilometres || Medal:NA
+
+John Aalberg --> ID:7 Sex:M || Age:31 || Height:183 || Weight:72 || Team:United States|| NOC:USA || Games:1992 Winter || Year:1992 || Season:Winter || City:Albertville || Sport:Cross Country Skiing ||Event:Cross Country Skiing Men's 50 kilometres || Medal:NA
+
+John Aalberg --> ID:7 Sex:M || Age:31 || Height:183 || Weight:72 || Team:United States|| NOC:USA || Games:1992 Winter || Year:1992 || Season:Winter || City:Albertville || Sport:Cross Country Skiing ||Event:Cross Country Skiing Men's 10/15 kilometres Pursuit || Medal:NA
+
+John Aalberg --> ID:7 Sex:M || Age:31 || Height:183 || Weight:72 || Team:United States|| NOC:USA || Games:1992 Winter || Year:1992 || Season:Winter || City:Albertville || Sport:Cross Country Skiing ||Event:Cross Country Skiing Men's 4 x 10 kilometres Relay || Medal:NA
+
+John Aalberg --> ID:7 Sex:M || Age:33 || Height:183 || Weight:72 || Team:United States|| NOC:USA || Games:1994 Winter || Year:1994 || Season:Winter || City:Lillehammer || Sport:Cross Country Skiing ||Event:Cross Country Skiing Men's 10 kilometres || Medal:NA
+
+John Aalberg --> ID:7 Sex:M || Age:33 || Height:183 || Weight:72 || Team:United States|| NOC:USA || Games:1994 Winter || Year:1994 || Season:Winter || City:Lillehammer || Sport:Cross Country Skiing ||Event:Cross Country Skiing Men's 30 kilometres || Medal:NA
+
+John Aalberg --> ID:7 Sex:M || Age:33 || Height:183 || Weight:72 || Team:United States|| NOC:USA || Games:1994 Winter || Year:1994 || Season:Winter || City:Lillehammer || Sport:Cross Country Skiing ||Event:Cross Country Skiing Men's 10/15 kilometres Pursuit || Medal:NA
+
+John Aalberg --> ID:7 Sex:M || Age:33 || Height:183 || Weight:72 || Team:United States|| NOC:USA || Games:1994 Winter || Year:1994 || Season:Winter || City:Lillehammer || Sport:Cross Country Skiing ||Event:Cross Country Skiing Men's 4 x 10 kilometres Relay || Medal:NA
+

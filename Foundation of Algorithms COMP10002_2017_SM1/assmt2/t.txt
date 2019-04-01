@@ -1,0 +1,16 @@
+#hewitt
+5 95 0
+#hugh
+40 60 0
+#jackman
+0 100 0
+#logan
+40 0 60
+#melbourne
+5 5 90
+#sydney
+5 5 90
+#zack
+40 40 20
+%%%%%%%%%%
+hugh jackman is retiring the wolverine character after logan

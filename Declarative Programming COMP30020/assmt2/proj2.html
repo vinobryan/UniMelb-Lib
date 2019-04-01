@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta name="generator" content="hevea 2.23">
+<style type="text/css">
+.li-itemize{margin:1ex 0ex;}
+.li-enumerate{margin:1ex 0ex;}
+.dd-description{margin:0ex 0ex 1ex 4ex;}
+.dt-description{margin:0ex;}
+.toc{list-style:none;}
+.footnotetext{margin:0ex; padding:0ex;}
+div.footnotetext P{margin:0px; text-indent:1em;}
+.thefootnotes{text-align:left;margin:0ex;}
+.dt-thefootnotes{margin:0em;}
+.dd-thefootnotes{margin:0em 0em 0em 2em;}
+.footnoterule{margin:1em auto 1em 0px;width:50%;}
+.caption{padding-left:2ex; padding-right:2ex; margin-left:auto; margin-right:auto}
+.title{margin:2ex auto;text-align:center}
+.titlemain{margin:1ex 2ex 2ex 1ex;}
+.titlerest{margin:0ex 2ex;}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+.flushleft{text-align:left;margin-left:0ex;margin-right:auto;}
+.flushright{text-align:right;margin-left:auto;margin-right:0ex;}
+div table{margin-left:inherit;margin-right:inherit;margin-bottom:2px;margin-top:2px}
+td table{margin:auto;}
+table{border-collapse:collapse;}
+td{padding:0;}
+.cellpadding0 tr td{padding:0;}
+.cellpadding1 tr td{padding:1px;}
+pre{text-align:left;margin-left:0ex;margin-right:auto;}
+blockquote{margin-left:4ex;margin-right:4ex;text-align:left;}
+td p{margin:0px;}
+.boxed{border:1px solid black}
+.textboxed{border:1px solid black}
+.vbar{border:none;width:2px;background-color:black;}
+.hbar{border:none;height:2px;width:100%;background-color:black;}
+.hfill{border:none;height:1px;width:200%;background-color:black;}
+.vdisplay{border-collapse:separate;border-spacing:2px;width:auto; empty-cells:show; border:2px solid red;}
+.vdcell{white-space:nowrap;padding:0px; border:2px solid green;}
+.display{border-collapse:separate;border-spacing:2px;width:auto; border:none;}
+.dcell{white-space:nowrap;padding:0px; border:none;}
+.dcenter{margin:0ex auto;}
+.vdcenter{border:solid #FF8000 2px; margin:0ex auto;}
+.minipage{text-align:left; margin-left:0em; margin-right:auto;}
+.marginpar{border:solid thin black; width:20%; text-align:left;}
+.marginparleft{float:left; margin-left:0ex; margin-right:1ex;}
+.marginparright{float:right; margin-left:1ex; margin-right:0ex;}
+.theorem{text-align:left;margin:1ex auto 1ex 0ex;}
+.part{margin:2ex auto;text-align:center}
+</style>
+<title>proj2</title>
+</head>
+<body >
+<!--HEVEA command line is: hevea proj2.tex -->
+<!--CUT STYLE article--><!--CUT DEF section 1 --><div class="center">
+<span style="font-variant:small-caps"><span style="font-size:large">The University of Melbourne
+</span></span> <br>
+ <span style="font-size:large">School of Computing and Information Systems
+</span> <br>
+ <span style="font-size:large">COMP30020/COMP90048 Declarative Programming
+</span> <br>
+ <span style="font-size:large">Semester 2, 2017
+</span> <br>
+ <span style="font-weight:bold"><span style="font-size:x-large">Project Specification</span></span> <br>
+ <span style="font-size:large"><em>Project due 
+16 October 2015 at 5pm</em></span> <br>
+ <span style="font-size:large"><em>Worth
+15%</em></span>
+</div><p><br>
+<br>
+<br>
+</p><p>The objective of this project is to practice and assess your
+understanding of logic programming and Prolog. You will write code to
+solve maths puzzles.</p><!--TOC section id="sec1" Maths Puzzles-->
+<h2 id="sec1" class="section">Maths Puzzles</h2><!--SEC END --><p>A maths puzzle is a square grid of squares, each to be filled in with a
+single digit 1&#X2013;9 (zero is not permitted) satisfying these constraints:</p><ul class="itemize"><li class="li-itemize">
+each row and each column contains no repeated digits;
+</li><li class="li-itemize">all squares on the diagonal line from upper left to lower right
+contain the same value; and
+</li><li class="li-itemize">the heading of reach row and column (leftmost square in a row and
+topmost square in a column) holds either the sum or the product of all the
+digits in that row or column
+</li></ul><p>Note that the row and column headings are not considered to be part of the
+row or column, and so may be filled with a number larger than a single
+digit.
+The upper left corner of the puzzle is not meaningful.</p><p>When the puzzle is originally posed, most or all of the squares will be
+empty, with the headings filled in.
+The goal of the puzzle is to fill in all the squares according to the rules.
+A proper maths puzzle will have at most one solution.</p><p>Here is an example puzzle as posed (above) and solved (below) :</p><p><br>
+<br>
+
+</p><table border=1  style="border-spacing:0;" class="cellpadding1"><tr><td style="text-align:center;border:solid 1px;white-space:nowrap" > <table><tr><td style="padding:1em;background-color:red"> </td></tr>
+</table></td><td style="text-align:center;border:solid 1px;white-space:nowrap" ><table><tr><td style="padding:1em;background-color:red"><span style="font-weight:bold">14</span></td></tr>
+</table></td><td style="text-align:center;border:solid 1px;white-space:nowrap" ><table><tr><td style="padding:1em;background-color:red"><span style="font-weight:bold">10</span></td></tr>
+</table></td><td style="text-align:center;border:solid 1px;white-space:nowrap" ><table><tr><td style="padding:1em;background-color:red"><span style="font-weight:bold">35</span></td></tr>
+</table> </td></tr>
+<tr><td style="text-align:center;border:solid 1px;white-space:nowrap" > <table><tr><td style="padding:1em;background-color:red"><span style="font-weight:bold">14</span></td></tr>
+</table></td><td style="text-align:center;border:solid 1px;white-space:nowrap" >&nbsp;</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >&nbsp;</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >&nbsp;</td></tr>
+<tr><td style="text-align:center;border:solid 1px;white-space:nowrap" > <table><tr><td style="padding:1em;background-color:red"><span style="font-weight:bold">15</span></td></tr>
+</table></td><td style="text-align:center;border:solid 1px;white-space:nowrap" >&nbsp;</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >&nbsp;</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >&nbsp;</td></tr>
+<tr><td style="text-align:center;border:solid 1px;white-space:nowrap" > <table><tr><td style="padding:1em;background-color:red"><span style="font-weight:bold">28</span></td></tr>
+</table></td><td style="text-align:center;border:solid 1px;white-space:nowrap" >&nbsp;</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >1</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >&nbsp;</td></tr>
+</table><p>
+<br>
+</p><table border=1  style="border-spacing:0;" class="cellpadding1"><tr><td style="text-align:center;border:solid 1px;white-space:nowrap" > <table><tr><td style="padding:1em;background-color:red"> </td></tr>
+</table></td><td style="text-align:center;border:solid 1px;white-space:nowrap" ><table><tr><td style="padding:1em;background-color:red"><span style="font-weight:bold">14</span></td></tr>
+</table></td><td style="text-align:center;border:solid 1px;white-space:nowrap" ><table><tr><td style="padding:1em;background-color:red"><span style="font-weight:bold">10</span></td></tr>
+</table></td><td style="text-align:center;border:solid 1px;white-space:nowrap" ><table><tr><td style="padding:1em;background-color:red"><span style="font-weight:bold">35</span></td></tr>
+</table> </td></tr>
+<tr><td style="text-align:center;border:solid 1px;white-space:nowrap" > <table><tr><td style="padding:1em;background-color:red"><span style="font-weight:bold">14</span></td></tr>
+</table></td><td style="text-align:center;border:solid 1px;white-space:nowrap" >7</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >2</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >1 </td></tr>
+<tr><td style="text-align:center;border:solid 1px;white-space:nowrap" > <table><tr><td style="padding:1em;background-color:red"><span style="font-weight:bold">15</span></td></tr>
+</table></td><td style="text-align:center;border:solid 1px;white-space:nowrap" >3</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >7</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >5 </td></tr>
+<tr><td style="text-align:center;border:solid 1px;white-space:nowrap" > <table><tr><td style="padding:1em;background-color:red"><span style="font-weight:bold">28</span></td></tr>
+</table></td><td style="text-align:center;border:solid 1px;white-space:nowrap" >4</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >1</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >7 </td></tr>
+</table><p>
+<br>
+<br>
+</p><!--TOC section id="sec2" The Program-->
+<h2 id="sec2" class="section">The Program</h2><!--SEC END --><p>
+You will write Prolog code to solve maths puzzles.
+Your program should supply a predicate
+<span style="font-family:monospace">puzzle_solution(</span><span style="font-style:italic">Puzzle</span><span style="font-family:monospace">)</span>
+that holds when <span style="font-style:italic">Puzzle</span> is the representation of a solved maths
+puzzle.</p><p>A maths puzzle will be represented as a list of lists, each of the same
+length, representing a single row of the puzzle.
+The first element of each list is considered to be the header for that row.
+Each element but the first of the first list in the puzzle is considered to
+be the header of the corresponding column of the puzzle.
+The first element of the first element of the list is the corner square of
+the puzzle, and thus is ignored.</p><p>You can assume that when your <span style="font-family:monospace">puzzle_solution</span>/1 predicate is
+called, its argument will be a proper list of proper lists, and all the
+header squares of the puzzle (plus the ignored corner square) are bound to
+integers.
+Some of the other squares in the puzzle may also be bound to integers, but
+the others will be unbound.
+When <span style="font-family:monospace">puzzle_solution</span>/1 succeeds, its argument must be ground.
+You may assume your code will only be tested with proper puzzles, which
+have at most one solution.
+Of course, if the puzzle is not solvable, the predicate should fail, and it
+should never succeed with a puzzle argument that is not a valid solution.
+For example, your program would solve the above puzzle as below:
+</p><div class="center">
+<pre class="verbatim">  ?- Puzzle=[[0,14,10,35],[14,_,_,_],[15,_,_,_],[28,_,1,_]], 
+  |    puzzle_solution(Puzzle).
+  Puzzle = [[0, 14, 10, 35], [14, 7, 2, 1], [15, 3, 7, 5], [28, 4, 1, 7]] ;
+  false.
+</pre></div><p>Your <span style="font-family:monospace">puzzle_solution</span>/1
+predicate should be written in the file <span style="font-family:monospace">proj2.pl</span>, but you may
+submit other prolog files if you like. If you do use multiple files,
+make sure <span style="font-family:monospace">proj2.pl</span> loads the other files.
+You may also use Prolog library modules supported by SWI Prolog
+as installed on the servers, which is version 7.2.3.
+You may, but need not, use SWI Prolog&#X2019;s Constraint Logic
+Programming facilities to solve the problem.</p><!--TOC section id="sec3" Hints-->
+<h2 id="sec3" class="section">Hints</h2><!--SEC END --><ol class="enumerate" type=1><li class="li-enumerate">
+<a id="diag-hint"></a>
+Begin by unifying all the squares on the diagonal.
+This only needs to be done once to ensure that the puzzle satisfies the
+first constraint.</li><li class="li-enumerate">It is fairly simple to check if a row of the puzzle (one of the inner
+lists) is a valid solution.
+Simply check that the first list element is equal to the sum or product of
+the other elements.
+Checking the columns is a bit more complicated.
+However, the library provides a <span style="font-family:monospace">transpose</span>/2 predicate.
+If you transpose the puzzle, the columns become rows, so
+you can check the columns by checking the rows of the transposed puzzle.
+Load the library module containing the <span style="font-family:monospace">transpose</span>/2 predicate with
+the directive
+<div class="center">
+<span style="font-family:monospace">:- ensure_loaded(library(clpfd)).</span>
+</div></li><li class="li-enumerate"><a id="simplestrategy"></a>
+A very simple strategy for solving puzzles is to backtrack over
+all possible values for each puzzle square, and test that it is a valid
+puzzle solution.
+For a 2&#XD7;2 puzzle, there are 9<sup>4</sup> = 6561 filled puzzles.
+This is very tractable, as long as the code to check that a puzzle is
+valid is reasonably efficient.
+This is a good way to get started.</li><li class="li-enumerate">However, even for a 3&#XD7;3 puzzle, there are 9<sup>9</sup> = 387,420,489
+filled puzzles, and even for very efficient code to check if a solution is
+valid, the strategy of Hint&#XA0;<a href="#simplestrategy">3</a> will not be tractable.<p>But note that if the first row of the filled puzzle is not valid, the
+whole puzzle will be invalid, so there is no point exploring those
+possibilities.
+For example, if the heading of the first row is <span style="font-weight:bold">23</span>, only 6 of the
+9<sup>3</sup>=729 possible ways to fill it could possibly be valid.
+More importantly, if you check that each row and column is valid as soon
+as it is generated, rather than generating the whole grid before checking,
+you can cut the search space enormously.
+If all three rows of a 3&#XD7;3 puzzle have only 6 solutions, then there
+are only 6<sup>3</sup>=216 candidate puzzles to check
+(since once all the rows have been filled in, then so have all the
+columns).</p></li><li class="li-enumerate">For some headings, there are far more than 6 possible rows or columns.
+For example, a three square row or column with a heading of <span style="font-weight:bold">16</span>
+has 54 valid ways to fill it, and for a four square row or column, there
+are 192 possibilities.
+Thus for some puzzles, it will be necessary to further cut the number of
+possibilities to explore.<p>One way to do this is to first fill the row or column with the fewest
+possibilities.
+Consider the example puzzle: the last row has only two possible ways to
+fill it: 7&#X2014;1&#X2014;4 and 4&#X2014;1&#X2014;7, while the last column has six possible
+ways.</p><p>Once one row or column is filled, that will reduce the number of
+possibilities in other rows and columns.
+In the example above, if the last row is filled with 7&#X2014;1&#X2014;4, There are,
+in fact, no ways to fill the last column, thus the choice of 7&#X2014;1&#X2014;4 for
+the last row can be immediately dismissed (since no selection for any of
+the other squares can get around the fact that there are no two digits
+that can be added to or multiplied by 4 to get 35).
+This leaves 4&#X2014;1&#X2014;7 as the only possible way to fill in the last row.
+By repeatedly choosing the row or column with the fewest alternatives and
+(nondeterministically) filling it with valid values, you can achieve
+adequate performance for this project.</p></li><li class="li-enumerate">The easiest way to do all this in Prolog is to reason about which
+variables are bound and which are unbound as a way to determine which
+squares have already been filled.
+For example, you can use the built-in predicate
+<span style="font-family:monospace">ground(</span><span style="font-family:monospace"><span style="font-style:italic">Term</span></span><span style="font-family:monospace">)</span>, which holds when <span style="font-family:monospace"><span style="font-style:italic">Term</span></span> is
+ground at the time the test is performed.
+When this succeeds for the puzzle, that means the entire puzzle has been
+filled in.
+At this point you can check that it is bound to a valid solution, and if
+so, succeed.
+If the puzzle is not ground, you will need to select a row or column and
+fill it in.
+Doing this will fill in one square in all perpendicular columns or rows,
+substantially cutting down on the number of valid ways they can be filled.
+In fact, if you have taken Hint&#XA0;<a href="#diag-hint">1</a>, then filling in one row
+will fill in one square in all the other rows, and one or two squares in
+all of the columns, and the reverse if you fill a column.<p>The easiest way to decide which row or column has the fewest solutions is
+to use the <span style="font-family:monospace">bagof</span>/3 predicate, and take the length of the
+resulting list of solutions.</p></li></ol><!--TOC section id="sec4" Assessment-->
+<h2 id="sec4" class="section">Assessment</h2><!--SEC END --><p>Your project will be assessed on the following criteria:</p><dl class="description"><dt class="dt-description">
+<span style="font-weight:bold">30%</span></dt><dd class="dd-description"> Quality of your code and documentation;
+</dd><dt class="dt-description"><span style="font-weight:bold">20%</span></dt><dd class="dd-description"> The ability of your program to correctly solve 2&#XD7;2 maths
+puzzles;
+</dd><dt class="dt-description"><span style="font-weight:bold">30%</span></dt><dd class="dd-description"> The ability of your program to correctly solve 3&#XD7;3
+maths puzzles; and
+</dd><dt class="dt-description"><span style="font-weight:bold">20%</span></dt><dd class="dd-description"> The ability of your program to correctly solve 4&#XD7;4
+maths puzzles.
+</dd></dl><p>Note that timeouts will be imposed on all tests. You will have at least 20
+seconds to solve each puzzle, regardless of difficulty.
+Executions taking longer than that will be unceremoniously terminated,
+leading to that test being assessed as failing. Twenty seconds should be
+ample with careful implementation.</p><p>See the Project Coding Guidelines on the LMS for detailed suggestions
+for coding style.
+These guidelines will form the basis of the quality
+assessment of your code and documentation.
+Be sure to document the predicates you take from the starter file you
+are given, too.</p><!--TOC section id="sec5" Submission-->
+<h2 id="sec5" class="section">Submission</h2><!--SEC END --><p>The project submission deadline is 16 October 2015 at 5pm.
+You must submit your project from one of the Linux servers
+<span style="font-family:monospace">dimefox.eng.unimelb.edu.au</span> or
+<span style="font-family:monospace">nutmeg.eng.unimelb.edu.au</span>.
+Note that this host is not
+directly accessible from outside the university campus, so if you wish
+to submit from home, you must use the university&#X2019;s VPN;
+see the LMS Resources page for guidance.
+Make sure the version of your program source files
+you wish to submit is on the server, <span style="font-family:monospace">cd</span> to the directory
+holding your source code and issue the command:
+</p><pre>
+    submit COMP90048 proj2 proj2.pl
+</pre><p>
+If your code spans multiple source files, add the extra ones to the
+end of that command line.</p><p><span style="font-weight:bold">Important:</span> you must wait a minute (more if the
+servers are busy) and do:
+</p><pre>
+    verify COMP90048 proj2 | less
+</pre><p>
+This
+will show you the test results from your submission, as well as the
+file(s) you submitted. If the test results show any problems, correct
+them and submit again. You may submit as often as you like; only your
+final submission will be assessed.</p><p>If your program
+compiles and runs properly, you should see the line &#X201C;<span style="font-family:monospace">Running
+tests</span>&#X201D;, followed by several test runs.
+If you do not see this, then your
+program did not work correctly.
+The version of SWI Prolog installed on the servers is older than you
+probably have on your own computer or the lab computers, so you should
+be sure to test your code on the servers.
+Do not just assume it will run correctly.</p><p>If you wish to (re-)submit after the project deadline, you may do so
+by adding &#X201C;<span style="font-family:monospace">.late</span>&#X201D; to the end of the project name
+(<em>i.e.,</em> <span style="font-family:monospace">proj2.late</span>) in the <span style="font-family:monospace">submit</span> and
+<span style="font-family:monospace">verify</span> commands. But note that a penalty, described below,
+will apply to late submissions, so you should weigh the points you
+will lose for a late submission against the points you expect to gain
+by revising your program and submitting again.</p><p><span style="font-weight:bold">It is your responsibility to verify your submission.</span></p><p>Windows users should see the LMS Resources list for instructions for
+downloading the (free) Putty and Winscp programs to allow you to use
+and copy files to the department servers from windows computers. Mac
+OS X and Linux users can use the <span style="font-family:monospace">ssh</span>, <span style="font-family:monospace">scp</span>, and <span style="font-family:monospace">sftp</span>
+programs that come with your operating system.</p><!--TOC subsection id="sec6" Late Penalties-->
+<h3 id="sec6" class="subsection">Late Penalties</h3><!--SEC END --><p>
+Late submissions will incur a penalty of 0.5% per hour late,
+including evening and weekend hours. This means that a perfect
+project that is much more than 4 days late will receive less than half
+the marks for the project. If you have a
+medical or similar compelling reason for being late, you should contact 
+the lecturer
+as early as possible to ask for an extension
+(preferably before the due date).</p><!--TOC section id="sec7" Note Well:-->
+<h2 id="sec7" class="section">Note Well:</h2><!--SEC END --><p>
+<span style="font-weight:bold">This project is part of your final assessment, so cheating is not
+acceptable. Any form of material exchange between teams, whether written,
+electronic or any other medium, is considered cheating, and so is the
+soliciting of help from electronic newsgroups. Providing undue assistance is
+considered as serious as receiving it, and in the case of similarities that
+indicate exchange of more than basic ideas, formal disciplinary action will
+be taken for all involved parties. If you have questions regarding these
+rules, please ask the lecturer.
+</span></p><!--CUT END -->
+<!--HTMLFOOT-->
+<!--ENDHTML-->
+<!--FOOTER-->
+<hr style="height:2"><blockquote class="quote"><em>This document was translated from L<sup>A</sup>T<sub>E</sub>X by
+</em><a href="http://hevea.inria.fr/index.html"><em>H</em><em><span style="font-size:small"><sup>E</sup></span></em><em>V</em><em><span style="font-size:small"><sup>E</sup></span></em><em>A</em></a><em>.</em></blockquote></body>
+</html>

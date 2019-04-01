@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta name="generator" content="hevea 2.29">
+<style type="text/css">
+.li-itemize{margin:1ex 0ex;}
+.li-enumerate{margin:1ex 0ex;}
+.dd-description{margin:0ex 0ex 1ex 4ex;}
+.dt-description{margin:0ex;}
+.toc{list-style:none;}
+.footnotetext{margin:0ex; padding:0ex;}
+div.footnotetext P{margin:0px; text-indent:1em;}
+.thefootnotes{text-align:left;margin:0ex;}
+.dt-thefootnotes{margin:0em;}
+.dd-thefootnotes{margin:0em 0em 0em 2em;}
+.footnoterule{margin:1em auto 1em 0px;width:50%;}
+.caption{padding-left:2ex; padding-right:2ex; margin-left:auto; margin-right:auto}
+.title{margin:2ex auto;text-align:center}
+.titlemain{margin:1ex 2ex 2ex 1ex;}
+.titlerest{margin:0ex 2ex;}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+.flushleft{text-align:left;margin-left:0ex;margin-right:auto;}
+.flushright{text-align:right;margin-left:auto;margin-right:0ex;}
+div table{margin-left:inherit;margin-right:inherit;margin-bottom:2px;margin-top:2px}
+td table{margin:auto;}
+table{border-collapse:collapse;}
+td{padding:0;}
+.cellpadding0 tr td{padding:0;}
+.cellpadding1 tr td{padding:1px;}
+pre{text-align:left;margin-left:0ex;margin-right:auto;}
+blockquote{margin-left:4ex;margin-right:4ex;text-align:left;}
+td p{margin:0px;}
+.boxed{border:1px solid black}
+.textboxed{border:1px solid black}
+.vbar{border:none;width:2px;background-color:black;}
+.hbar{border:none;height:2px;width:100%;background-color:black;}
+.hfill{border:none;height:1px;width:200%;background-color:black;}
+.vdisplay{border-collapse:separate;border-spacing:2px;width:auto; empty-cells:show; border:2px solid red;}
+.vdcell{white-space:nowrap;padding:0px; border:2px solid green;}
+.display{border-collapse:separate;border-spacing:2px;width:auto; border:none;}
+.dcell{white-space:nowrap;padding:0px; border:none;}
+.dcenter{margin:0ex auto;}
+.vdcenter{border:solid #FF8000 2px; margin:0ex auto;}
+.minipage{text-align:left; margin-left:0em; margin-right:auto;}
+.marginpar{border:solid thin black; width:20%; text-align:left;}
+.marginparleft{float:left; margin-left:0ex; margin-right:1ex;}
+.marginparright{float:right; margin-left:1ex; margin-right:0ex;}
+.theorem{text-align:left;margin:1ex auto 1ex 0ex;}
+.part{margin:2ex auto;text-align:center}
+</style>
+<title>proj1</title>
+</head>
+<body >
+<!--HEVEA command line is: /usr/bin/hevea proj1.tex -->
+<!--CUT STYLE article--><!--CUT DEF section 1 --><div class="center">
+<span style="font-variant:small-caps"><span style="font-size:large">The University of Melbourne
+</span></span> <br>
+ <span style="font-size:large">Department of Computing and Information Systems
+</span> <br>
+ <span style="font-size:x-large">Declarative Programming
+</span> <br>
+ <span style="font-size:large">COMP30020/COMP90048
+</span> <br>
+ <span style="font-size:large">Semester 2, 2017
+</span> <br>
+ <span style="font-weight:bold"><span style="font-size:x-large">Project Specification</span></span> <br>
+ <span style="font-size:large"><em>Project due 
+Thursday, 31 August 2017 at 5pm</em></span> <br>
+ <span style="font-size:large"><em>Worth
+15%</em></span>
+</div><p><br>
+<br>
+<br>
+</p><p>The objective of this project is to practice and assess your
+understanding of functional programming and Haskell. You will write code to
+implement the guessing part of a logical guessing game.</p><!--TOC section id="sec1" The Game of <span style="font-family:sans-serif">ChordProbe</span> -->
+<h2 id="sec1" class="section">The Game of <span style="font-family:sans-serif">ChordProbe</span></h2><!--SEC END --><p><span style="font-family:sans-serif">ChordProbe</span>  is a two-player logical guessing game created for this
+project. You will not find any information about the game anywhere
+else, but it is a simple game and this specification will tell you all you
+need to know.</p><p>For a <span style="font-family:sans-serif">ChordProbe</span> game, one player will be the <em>composer</em> and the
+other is the <em>performer</em>. The composer begins by selecting a
+three-pitch musical chord, where each pitch comprises a musical
+<em>note</em>, one of <span style="font-style:italic">A, B, C, D, E, F,</span> or <span style="font-style:italic">G</span>, and an
+<em>octave</em>, one of <span style="font-style:italic">1, 2,</span> or <span style="font-style:italic">3</span>. This chord will
+be the <em>target</em> for the game. The order of pitches in the target
+is irrelevant, and no pitch may appear more than once. This game does
+not include sharps or flats, and no more or less than three notes may
+be included in the target.</p><p>Once the composer has selected the target chord, the performer
+repeatedly chooses a similarly defined chord as a <em>guess</em> and tells it
+to the composer, who responds by giving the performer the following
+<em>feedback</em>:
+</p><ol class="enumerate" type=1><li class="li-enumerate">
+how many pitches in the guess are included in the target
+(correct pitches)
+</li><li class="li-enumerate">how many pitches have the right note but the wrong octave
+(correct notes)
+</li><li class="li-enumerate">how many pitches have the right octave but the wrong note (correct
+octaves)
+</li></ol><p>
+In counting correct notes and octaves, multiple occurrences in the guess
+are only counted as correct if they also appear repeatedly in the
+target.
+Correct pitches are not also counted as correct notes and octaves.
+For example, with a target of <em>A1, B2, A3</em>, a guess of
+<em>A1, A2, B1</em> would be counted as 1 correct pitch (<em>A1</em>), two
+correct notes (<em>A2, B1</em>) and one correct octave (<em>A2</em>).
+<em>B1</em> would not be counted as a correct octave, even though it has
+the same octave as the target <em>A1</em>, because the target <em>A1</em>
+was already used to count the guess <em>A1</em> as a correct pitch.
+A few more examples:
+</p><div class="center">
+<table style="border-spacing:6px;border-collapse:separate;" class="cellpading0"><tr><td style="text-align:center;white-space:nowrap" ><span style="font-weight:bold">Target</span></td><td style="text-align:center;white-space:nowrap" ><span style="font-weight:bold">Guess</span></td><td style="text-align:center;white-space:nowrap" ><span style="font-weight:bold">Answer</span> </td></tr>
+<tr><td class="hbar" colspan=3></td></tr>
+<tr><td style="text-align:center;white-space:nowrap" > <em>A1,B2,A3</em></td><td style="text-align:center;white-space:nowrap" ><em>A1,A2,B1</em></td><td style="text-align:center;white-space:nowrap" >1,2,1 </td></tr>
+<tr><td style="text-align:center;white-space:nowrap" > <em>A1,B2,C3</em></td><td style="text-align:center;white-space:nowrap" ><em>A1,A2,A3</em></td><td style="text-align:center;white-space:nowrap" >1,0,2 </td></tr>
+<tr><td style="text-align:center;white-space:nowrap" > <em>A1,B1,C1</em></td><td style="text-align:center;white-space:nowrap" ><em>A2,D1,E1</em></td><td style="text-align:center;white-space:nowrap" >0,1,2 </td></tr>
+<tr><td style="text-align:center;white-space:nowrap" > <em>A3,B2,C1</em></td><td style="text-align:center;white-space:nowrap" ><em>C3,A2,B1</em></td><td style="text-align:center;white-space:nowrap" >0,3,3 </td></tr>
+</table>
+</div><p>The game finishes once the performer guesses the correct chord (all
+three pitches in the guess are in the target). The object of the game
+for the performer is to find the target with the fewest possible guesses.</p><!--TOC section id="sec2" The Program-->
+<h2 id="sec2" class="section">The Program</h2><!--SEC END --><p>
+You will write Haskell code to implement the <em>performer</em> part of
+the game. This will require you to write a function to return your
+initial guess, and another to use the feedback from the previous guess
+to determine the next guess. The latter function will be called
+repeatedly until it produces the correct guess. You will find it
+useful to keep information between guesses; since Haskell is a purely
+functional language, you cannot use a global or static variable to
+store this. Therefore, your initial guess function must return this
+game state information, and your next guess function must take the
+game state as input and return the updated game state as output. You
+may put any information you like in the game state, but you
+<span style="font-style:italic">must</span> define a type <span style="font-family:monospace">GameState</span> to hold this
+information. If you do not need to maintain any game state, you may
+simply define <span style="font-family:monospace">type GameState = ()</span>.</p><p>You may use any representation you like for notes, octaves, pitches,
+and chords internally, and may use this representation inside your
+<span style="font-family:monospace">GameState</span> type. However, to avoid prejudicing your choice of
+representations, we use a very simple representation for the inputs
+and outputs of your functions. A chord is represented as a list of
+two-character strings, where the first character is an upper case
+letter between <span style="font-family:monospace">&#X2019;A&#X2019;</span> and <span style="font-family:monospace">&#X2019;G&#X2019;</span> representing the note,
+and the second is a digit character between <span style="font-family:monospace">&#X2019;1&#X2019;</span> and
+<span style="font-family:monospace">&#X2019;3&#X2019;</span> representing the octave.</p><p>You must define following functions:
+</p><dl class="description"><dt class="dt-description">
+<span style="font-weight:bold">initialGuess :: ([String],GameState)</span></dt><dd class="dd-description">  <br>
+ takes no input arguments, and returns a pair of an initial guess
+and a game state.
+</dd><dt class="dt-description"><span style="font-weight:bold">nextGuess :: ([String],GameState) </span>&#X2192;<span style="font-weight:bold"> (Int,Int,Int)
+</span>&#X2192;<span style="font-weight:bold"> ([String],GameState)</span></dt><dd class="dd-description">  <br>
+ takes as input a pair of the previous guess and game state, and
+the feedback to this guess as a triple of correct pitches, notes,
+and octaves, and returns a pair of the next guess and game state.
+</dd></dl><p>You must call your (main) source file <span style="font-family:monospace">Proj1.hs</span> (or
+<span style="font-family:monospace">Proj1.lhs</span> if you use literate Haskell),
+and it must contain the module declaration:
+</p><pre>
+    module Proj1 (initialGuess, nextGuess, GameState) where
+</pre><p>
+You may divide your code into as many files as you like, as long as
+your main file (and the files it imports) imports all the others. But
+do not feel you need to divide your program into many files if it is
+reasonably small.</p><p>I will post a test driver program <span style="font-family:monospace">Proj1Test.hs</span>,
+which will operate similarly to how I actually test
+your code. I will compile
+and link your code for testing using the command:
+</p><pre>
+    ghc -O2 --make Proj1Test
+</pre><p>
+or similar.
+To run <span style="font-family:monospace">Proj1Test</span>, give it the target as three separate
+command line arguments, for example <span style="font-family:monospace">./Proj1Test D1 B1 G2</span>
+would search for the target <span style="font-family:monospace">["D1", "B1", "G2"]</span>.
+It will then use your <span style="font-family:monospace">Proj1</span> module to
+guess the target; the output will look something like:
+</p><pre class="verbatim">Your guess 1:  ["A1","B1","C2"]
+My answer:  (1,0,2)
+Your guess 2:  ["A1","D1","E2"]
+My answer:  (1,0,2)
+Your guess 3:  ["A1","F1","G2"]
+My answer:  (1,0,2)
+Your guess 4:  ["B1","D1","G2"]
+My answer:  (3,0,0)
+You got it in 4 guesses!
+</pre><!--TOC section id="sec3" Assessment-->
+<h2 id="sec3" class="section">Assessment</h2><!--SEC END --><p>Your project will be assessed on the following criteria:</p><ul class="itemize"><li class="li-itemize">
+70% Quality and correctness of your implementation;
+</li><li class="li-itemize">30% Quality of your code and documentation
+</li></ul><p>The correctness of your implementation will be assessed
+based on whether it succeeds in guessing the targets it is given in
+the available time.
+Quality will be assessed based on the number of guesses needed to
+find the given targets.
+Full marks will be given for an average of 4.3 guesses per target,
+with marks falling on a logarithmic scale as the number of guesses
+rises.
+Thus moving from taking 5 guesses to 4 will gain similar number of
+points as going
+from 7 to 5 guesses. Therefore as the number of guesses drops,
+further small decreases in the number of guesses are increasingly
+valuable.</p><p>Note that timeouts will be imposed on all tests. You will have at least 5
+seconds to guess each target, regardless of how many guesses are needed.
+Executions taking longer than that may be unceremoniously terminated,
+leading to that test being assessed as failing. Your programs will be
+compiled with <span style="font-family:monospace">GHC -O2</span> before testing, so 5 seconds per test
+is a very reasonable limit.</p><p>See the Project Coding Guidelines on the LMS for detailed suggestions
+for coding style. These guidelines will form the basis of the
+quality assessment of your code and documentation.</p><!--TOC section id="sec4" Submission-->
+<h2 id="sec4" class="section">Submission</h2><!--SEC END --><p>You must submit your project from the student unix server
+<span style="font-family:monospace">dimefox.eng.unimelb.edu.au</span> or
+<span style="font-family:monospace">nutmeg.eng.unimelb.edu.au</span>.
+Make sure the version of your program source files
+you wish to submit is on this server, then <span style="font-family:monospace">cd</span> to the directory
+holding your source code and issue the command:
+</p><pre>
+  submit COMP90048 proj1 Proj1.hs
+</pre><p>
+(substitute <span style="font-family:monospace">Proj1.lhs</span> if you use literate Haskell).
+If your code spans multiple source files, add the extra ones to the
+end of that command line.</p><p><span style="font-weight:bold">Important:</span> you must wait a minute or two (or more if the
+servers are busy) after submitting, and then issue the command
+</p><pre>
+    verify COMP90048 proj1 | less
+</pre><p>
+This
+will show you the test results from your submission, as well as the
+file(s) you submitted. If the test results show any problems, correct
+them and submit again. You may submit as often as you like; only your
+final submission will be assessed.</p><p>If you wish to (re-)submit after the project deadline, you may do so
+by adding &#X201C;<span style="font-family:monospace">.late</span>&#X201D; to the end of the project name
+(<em>i.e.,</em> <span style="font-family:monospace">proj1.late</span>) in the <span style="font-family:monospace">submit</span> and
+<span style="font-family:monospace">verify</span> commands. But note that a penalty, described below,
+will apply to late submissions, so you should weigh the points you
+will lose for a late submission against the points you expect to gain
+by revising your program and submitting again.</p><p><span style="font-weight:bold">It is your responsibility to verify your submission.</span></p><p>Windows users should see the LMS Resources list for instructions for
+downloading the (free) Putty and Winscp programs to allow you to use
+and copy files to the department servers from windows computers. Mac
+OS X and Linux users can use the <span style="font-family:monospace">ssh</span>, <span style="font-family:monospace">scp</span>, and <span style="font-family:monospace">sftp</span>
+programs that come with your operating system.</p><!--TOC subsection id="sec5" Late Penalties-->
+<h3 id="sec5" class="subsection">Late Penalties</h3><!--SEC END --><p>
+Late submissions will incur a penalty of 0.5% of the possible value of that
+submission per hour 
+late, including evening and weekend hours.
+Late submissions will incur a penalty of 0.5% per hour late,
+including evening and weekend hours. This means that a perfect
+project that is much more than 4 days late will receive less than half
+the marks for the project. If you have a
+medical or similar compelling reason for being late, you should contact 
+the lecturer
+as early as possible to ask for an extension
+(preferably before the due date).</p><!--TOC section id="sec6" Hints-->
+<h2 id="sec6" class="section">Hints</h2><!--SEC END --><ol class="enumerate" type=1><li class="li-enumerate">
+A very simple approach to this program is to simply guess every
+possible combination of pitches until you guess right. There are
+only 1330 possible targets, so on average it should only take about
+665 guesses, making it perfectly feasible to do in 5 seconds.
+However, this will give a very poor score for guess quality.</li><li class="li-enumerate">A better approach would be to only make guesses that are
+consistent with the answers you have received for previous guesses.
+You can do this by computing the list of possible targets, and
+removing elements that are inconsistent with any answers you have
+received to previous guesses. A possible target is inconsistent
+with an answer you have received for a previous guess if the answer
+you would receive for that guess and that (possible) target is
+different from the answer you actually received for that guess.<p>You can use your <span style="font-family:monospace">GameState</span> type to store your previous
+guesses and the corresponding answers. Or, more efficient and just
+as easy, store the list of remaining possible targets in your
+<span style="font-family:monospace">GameState</span>, and pare it down each time you receive
+feedback for a guess.</p></li><li class="li-enumerate">The best results can be had by carefully choosing each guess so
+that it is most likely to leave a small remaining list of possible targets.
+You can do this by computing for each remaining possible target the
+maximum number of possible targets it will leave if you guess it.
+This you can do by computing, for each remaining possible target,
+the answer you will receive if it is the actual target, and then
+compute how many of the remaining possible targets would yield the
+same output, and take the maximum of all of these. Alternatively,
+you can take a more probabilistic approach, and compute the
+<em>average</em> number of possible targets that will remain after
+each guess, giving the <em>expected</em> number of remaining possible
+targets for each guess, and choose the guess with the smallest
+expected number of remaining possible targets.</li><li class="li-enumerate">Unfortunately, this is much more expensive to compute, and you
+will need to be careful to make it efficient enough to use.
+One thing you can do to speed
+it up is to laboriously (somehow) find the best first guess and hard
+code that into your program. After the first guess, there are much
+fewer possible targets remaining, and your implementation may be
+fast enough then.</li><li class="li-enumerate">You can also remove <em>symmetry</em> in the problem space.
+The key insight needed for this is that given any <em>guess</em> and
+an answer returned for it, the set of remaining possibilities after
+receiving that answer for that guess will
+be the same regardless of which target yielded that answer.
+This suggests collecting all the <em>distinct</em> answers for a
+given guess and for each answer, counting the number of targets that would
+give that answer. Since there are much fewer answers than possible targets,
+this can save significant work.<p>For example, suppose there are ten remaining candidate targets, and one
+guess gives the answer (3,0,0), three others give (1,0,2), and the
+remaining six give the answer (2,0,1).
+In this case, if you make that guess, there is a 1 in 10 chance of that
+being the right answer (so you are left with that as the only remaining
+candidate), 3 in 10 of being left with three candidates, and a 6 in 10 chance of being left with six candidates.
+This means on average you would expect this answer to leave you with
+</p><table class="display dcenter"><tr style="vertical-align:middle"><td class="dcell"><table class="display"><tr style="vertical-align:middle"><td class="dcell"><table class="display"><tr><td class="dcell" style="text-align:center">1</td></tr>
+<tr><td class="hbar"></td></tr>
+<tr><td class="dcell" style="text-align:center">10</td></tr>
+</table></td><td class="dcell">&#XA0;&#XD7;&#XA0;1&#XA0;+&#XA0;</td><td class="dcell"><table class="display"><tr><td class="dcell" style="text-align:center">3</td></tr>
+<tr><td class="hbar"></td></tr>
+<tr><td class="dcell" style="text-align:center">10</td></tr>
+</table></td><td class="dcell">&#XA0;&#XD7;&#XA0;3&#XA0;+&#XA0;</td><td class="dcell"><table class="display"><tr><td class="dcell" style="text-align:center">6</td></tr>
+<tr><td class="hbar"></td></tr>
+<tr><td class="dcell" style="text-align:center">10</td></tr>
+</table></td><td class="dcell">&#XA0;&#XD7;&#XA0;6</td></tr>
+</table></td><td class="dcell">&#XA0;=&#XA0;4.6
+</td></tr>
+</table><p>
+remaining candidates.
+You just need to select a guess that gives the minimum expected number
+of remaining candidates.</p><p>Also note that if you do this incorrectly, the worst consequence is
+that your program takes more guesses than necessary to find the
+target. As long as you only ever guess a possible target,
+every guess other than the right one removes at least one possible target,
+so you will eventually guess the right target.</p></li><li class="li-enumerate">Note that these are just hints; you are welcome to use any
+approach you like to solve this, as long as it is correct and runs
+within the allowed time.</li></ol><!--TOC section id="sec7" Note Well:-->
+<h2 id="sec7" class="section">Note Well:</h2><!--SEC END --><p>
+<span style="font-weight:bold">This project is part of your final assessment, so cheating is not
+acceptable. Any form of material exchange between teams, whether written,
+electronic or any other medium, is considered cheating, and so is the
+soliciting of help from electronic newsgroups. Providing undue assistance is
+considered as serious as receiving it, and in the case of similarities that
+indicate exchange of more than basic ideas, formal disciplinary action will
+be taken for all involved parties. If you have questions regarding these
+rules, please ask the lecturer.
+</span></p><!--CUT END -->
+<!--HTMLFOOT-->
+<!--ENDHTML-->
+<!--FOOTER-->
+<hr style="height:2"><blockquote class="quote"><em>This document was translated from L<sup>A</sup>T<sub>E</sub>X by
+</em><a href="http://hevea.inria.fr/index.html"><em>H</em><em><span style="font-size:small"><sup>E</sup></span></em><em>V</em><em><span style="font-size:small"><sup>E</sup></span></em><em>A</em></a><em>.</em></blockquote></body>
+</html>

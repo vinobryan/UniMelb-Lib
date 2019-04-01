@@ -1,0 +1,43 @@
+/* Exercise 3.2: The if-statement
+   Jianzhong Qi, March 2013.
+*/
+
+ANSWERS:
+
+=======
+
+a. i = 7, j = 4
+
+
+b. i = 3, j = 5, k = 9
+
+	/* Note: logical operator precedence. */
+
+c. days = 30  
+
+	/* Note: the guard of the "else if" statement has a wrong syntax.
+	   The correct one is:
+	   month == 4 || month == 6 || month == 9 || month == 11
+        */   
+
+d. x = 2, y = 4
+
+	/* Note: the usage of compound statements. */
+
+e. x = 1, y = 2
+
+   x = 2, y = 2
+
+   x = 2, y = 4
+
+	/* Note: there are ";"s after the if statements */
+	
+f. y is greater
+
+	/* NOTE: the guard of the "else if" statement has a wrong syntax. 
+	   The Assignment "y=x" returns the value of y, which is 0 (and
+	   hence false), so "x and y are equal" will not be printed out.
+           The correct guard is:
+               y==x
+        */
+

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta name="generator" content="hevea 2.23">
+<style type="text/css">
+.li-itemize{margin:1ex 0ex;}
+.li-enumerate{margin:1ex 0ex;}
+.dd-description{margin:0ex 0ex 1ex 4ex;}
+.dt-description{margin:0ex;}
+.toc{list-style:none;}
+.footnotetext{margin:0ex; padding:0ex;}
+div.footnotetext P{margin:0px; text-indent:1em;}
+.thefootnotes{text-align:left;margin:0ex;}
+.dt-thefootnotes{margin:0em;}
+.dd-thefootnotes{margin:0em 0em 0em 2em;}
+.footnoterule{margin:1em auto 1em 0px;width:50%;}
+.caption{padding-left:2ex; padding-right:2ex; margin-left:auto; margin-right:auto}
+.title{margin:2ex auto;text-align:center}
+.titlemain{margin:1ex 2ex 2ex 1ex;}
+.titlerest{margin:0ex 2ex;}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+.flushleft{text-align:left;margin-left:0ex;margin-right:auto;}
+.flushright{text-align:right;margin-left:auto;margin-right:0ex;}
+div table{margin-left:inherit;margin-right:inherit;margin-bottom:2px;margin-top:2px}
+td table{margin:auto;}
+table{border-collapse:collapse;}
+td{padding:0;}
+.cellpadding0 tr td{padding:0;}
+.cellpadding1 tr td{padding:1px;}
+pre{text-align:left;margin-left:0ex;margin-right:auto;}
+blockquote{margin-left:4ex;margin-right:4ex;text-align:left;}
+td p{margin:0px;}
+.boxed{border:1px solid black}
+.textboxed{border:1px solid black}
+.vbar{border:none;width:2px;background-color:black;}
+.hbar{border:none;height:2px;width:100%;background-color:black;}
+.hfill{border:none;height:1px;width:200%;background-color:black;}
+.vdisplay{border-collapse:separate;border-spacing:2px;width:auto; empty-cells:show; border:2px solid red;}
+.vdcell{white-space:nowrap;padding:0px; border:2px solid green;}
+.display{border-collapse:separate;border-spacing:2px;width:auto; border:none;}
+.dcell{white-space:nowrap;padding:0px; border:none;}
+.dcenter{margin:0ex auto;}
+.vdcenter{border:solid #FF8000 2px; margin:0ex auto;}
+.minipage{text-align:left; margin-left:0em; margin-right:auto;}
+.marginpar{border:solid thin black; width:20%; text-align:left;}
+.marginparleft{float:left; margin-left:0ex; margin-right:1ex;}
+.marginparright{float:right; margin-left:1ex; margin-right:0ex;}
+.theorem{text-align:left;margin:1ex auto 1ex 0ex;}
+.part{margin:2ex auto;text-align:center}
+</style>
+<title>fillin</title>
+</head>
+<body >
+<!--HEVEA command line is: hevea fillin.tex -->
+<!--CUT STYLE article--><!--CUT DEF section 1 --><div class="center">
+<span style="font-variant:small-caps"><span style="font-size:large">The University of Melbourne
+</span></span> <br>
+ <span style="font-size:large">Department of Computing and Information Systems
+</span> <br>
+ <span style="font-size:x-large">Declarative Programming
+</span> <br>
+ <span style="font-size:large">COMP90048</span> <br>
+ <span style="font-size:large">Semester 2, 2016
+</span> <br>
+ <span style="font-weight:bold"><span style="font-size:x-large">Project Specification</span></span> <br>
+ <span style="font-size:large"><em>Project due 
+23 October 2016 at 11:59pm</em></span> <br>
+ <span style="font-size:large"><em>Worth
+15%</em></span>
+</div><p><br>
+<br>
+<br>
+</p><p>The objective of this project is to practice and assess your
+understanding of logic programming and Prolog. You will write code to
+solve fillin crossword puzzles.</p><!--TOC section id="sec1" Fillin Puzzles-->
+<h2 id="sec1" class="section">Fillin Puzzles</h2><!--SEC END --><p>A fillin puzzle (sometimes called a fill-it-in) is like a crossword
+puzzle, except that instead of being given obscure clues telling which
+words go where, you are given a list of all the words to place in the
+puzzle, but not told where they go.</p><p>The puzzle consists of a grid of squares, most of which are empty,
+into which letters or digits are to be written, but some of which are filled in
+solid, and are not to be written in. You are also given a list of
+words or multi-digit numbers to place in the puzzle. Henceforth we
+shall discuss the puzzles in terms of words and letters, but keep in
+mind that they can be numbers and digits, too.
+You must place each word in the word
+list exactly once in the puzzle, either left-to-right or
+top-to-bottom, filling a maximal sequence of empty squares. Also,
+every maximal sequence of non-solid squares that is more than one
+square long must have
+one word from the word list written in it. Many words cross one
+another, so many of the letters in a horizontal word will also be a
+letter in a vertical word. For a properly constructed fillin puzzle,
+there will be only one way to fill in the words (in some cases, the
+puzzle is symmetrical around a diagonal axis, in which case there will
+be two symmetrical solutions).</p><p>Here is an example 7 by 7 fillin puzzle, together with its solution,
+taken from the <a href="http://en.wikipedia.org/wiki/Fill-In_(puzzle)">Wikipedia page for fillin puzzles</a>. In this example, one word is
+already written into the puzzle, but this is not required.</p><div class="center">
+<img src="180px-Sample_7x7_Fill-In_Starter_Grid.png">&#XA0;&#XA0;&#XA0;
+<img src="180px-Sample_7x7_Fill-In_Complete_Grid.png"></div><p>The word list for this puzzle is: GI IO ON OR DAG EVO OED REF ARID
+CLEF CLOD DAIS DENS DOLE EDIT SILO ARTICLE VESICLE.</p><!--TOC section id="sec2" The Program-->
+<h2 id="sec2" class="section">The Program</h2><!--SEC END --><p>
+You will write Prolog code to solve fillin puzzles. Your main
+predicate should be written in the file <span style="font-family:monospace">fillin.pl</span>, but you may
+submit other prolog files if you like. If you do use multiple files,
+make sure <span style="font-family:monospace">fillin.pl</span> loads the other files.</p><p>Your program should supply a predicate
+<span style="font-family:monospace">main(</span><span style="font-style:italic">PuzzleFile, WordlistFile, SolutionFile</span><span style="font-family:monospace">)</span>
+that reads
+in the puzzle file whose name is <span style="font-style:italic">PuzzleFile</span> and the word list
+file whose name is <span style="font-style:italic">WordlistFile</span>, solve the puzzle, and print
+out the result to the file <span style="font-style:italic">SolutionFile</span>.</p><p>The puzzle file will contain a number of lines each
+with the same number of characters, to form a rectangle. The
+characters in this file should all be either an underline character
+(<code>_</code>) indicating a fill-able square, a hash character (<code>#</code>)
+indicating a solid, non-fill-able square, or a letter or digit, indicating a
+pre-filled square.
+The output <span style="font-style:italic">SolutionFile</span> must have the same format (except
+that it should be filled, so it should not contain underlines).
+The word list file is simply a text file with one word per line.</p><p>You will be provided with code to read in these files
+and to print out the result in the form of a file
+<span style="font-family:monospace">fillin_starter.pl</span>.
+You may use this code, modify it as you like, or ignore it, but you
+must provide the predicate
+<span style="font-family:monospace">main(</span><span style="font-style:italic">PuzzleFile, WordlistFile, SolutionFile</span><span style="font-family:monospace">)</span>,
+and your code must handle input files, and produce an output file, in
+the specified format.
+The starter file gives a trivial definition of the predicate
+<span style="font-family:monospace">solve_puzzle</span>/3; you need only give a working definition of
+this predicate, and of course properly
+<span style="font-style:italic">document the predicates you are given</span> as well as
+the predicates you write.
+You should begin by renaming the starter file to <span style="font-family:monospace">fillin.pl</span>.</p><!--TOC section id="sec3" Assessment-->
+<h2 id="sec3" class="section">Assessment</h2><!--SEC END --><p>Your project will be assessed on the following criteria:</p><dl class="description"><dt class="dt-description">
+<span style="font-weight:bold">30%</span></dt><dd class="dd-description"> Quality of your code and documentation;
+</dd><dt class="dt-description"><span style="font-weight:bold">30%</span></dt><dd class="dd-description"> The ability of your program to correctly solve fill-in
+puzzles of varying sizes (up to 15 by 15) that can be solved without
+search (see hint <a href="#no-search">7</a>);
+</dd><dt class="dt-description"><span style="font-weight:bold">20%</span></dt><dd class="dd-description"> The ability of your program to correctly solve small to
+medium size puzzles (up to 10 by 10) that do require search;
+</dd><dt class="dt-description"><span style="font-weight:bold">20%</span></dt><dd class="dd-description"> The ability of your program to correctly solve larger
+puzzles (up to 32 by 20) that do require search.
+</dd></dl><p>Note that timeouts will be imposed on all tests. You will have at least 20
+seconds to solve each puzzle, regardless of difficulty.
+Executions taking longer than that will be unceremoniously terminated,
+leading to that test being assessed as failing. Twenty seconds should be
+ample with careful implementation.</p><p>See the Project Coding Guidelines on the LMS for detailed suggestions
+for coding style.
+These guidelines will form the basis of the quality
+assessment of your code and documentation.
+Be sure to document the predicates you take from the starter file you
+are given, too.</p><!--TOC section id="sec4" Submission-->
+<h2 id="sec4" class="section">Submission</h2><!--SEC END --><p>The project submission deadline is 23 October 2016 at 11:59pm.
+You must submit your project from one of the Linux servers
+<span style="font-family:monospace">dimefox.eng.unimelb.edu.au</span> or
+<span style="font-family:monospace">nutmeg.eng.unimelb.edu.au</span>.
+Note that this host is not
+directly accessible from outside the university campus, so if you wish
+to submit from home, you must use the university&#X2019;s VPN;
+see the LMS Resources page for guidance.
+Make sure the version of your program source files
+you wish to submit is on the server, <span style="font-family:monospace">cd</span> to the directory
+holding your source code and issue the command:
+</p><pre>
+    submit COMP90048 proj2 fillin.pl
+</pre><p>
+If your code spans multiple source files, add the extra ones to the
+end of that command line.</p><p><span style="font-weight:bold">Important:</span> you must wait a minute (more if the
+servers are busy) and do:
+</p><pre>
+    verify COMP90048 proj2 | less
+</pre><p>
+This
+will show you the test results from your submission, as well as the
+file(s) you submitted. If the test results show any problems, correct
+them and submit again. You may submit as often as you like; only your
+final submission will be assessed.</p><p>If your program
+compiles and runs properly, you should see the line &#X201C;<span style="font-family:monospace">Running
+tests</span>&#X201D;, followed by several test runs.
+If you do not see this, then your
+program did not work correctly.
+The version of SWI Prolog installed on the servers is older than you
+probably have on your own computer or the lab computers, so you should
+be sure to test your code on the servers.
+Do not just assume it will run correctly.</p><p>If you wish to (re-)submit after the project deadline, you may do so
+by adding &#X201C;<span style="font-family:monospace">.late</span>&#X201D; to the end of the project name
+(<em>i.e.,</em> <span style="font-family:monospace">proj2.late</span>) in the <span style="font-family:monospace">submit</span> and
+<span style="font-family:monospace">verify</span> commands. But note that a penalty, described below,
+will apply to late submissions, so you should weigh the points you
+will lose for a late submission against the points you expect to gain
+by revising your program and submitting again.</p><p><span style="font-weight:bold">It is your responsibility to verify your submission.</span></p><p>Windows users should see the LMS Resources list for instructions for
+downloading the (free) Putty and Winscp programs to allow you to use
+and copy files to the department servers from windows computers. Mac
+OS X and Linux users can use the <span style="font-family:monospace">ssh</span>, <span style="font-family:monospace">scp</span>, and <span style="font-family:monospace">sftp</span>
+programs that come with your operating system.</p><!--TOC subsection id="sec5" Late Penalties-->
+<h3 id="sec5" class="subsection">Late Penalties</h3><!--SEC END --><p>
+Late submissions will incur a penalty of 0.5% per hour late,
+including evening and weekend hours. This means that a perfect
+project that is much more than 4 days late will receive less than half
+the marks for the project. If you have a
+medical or similar compelling reason for being late, you should contact 
+the lecturer
+as early as possible to ask for an extension
+(preferably before the due date).</p><!--TOC section id="sec6" Hints-->
+<h2 id="sec6" class="section">Hints</h2><!--SEC END --><ol class="enumerate" type=1><li class="li-enumerate">
+The basic strategy for solving these puzzles is to select a
+&#X201C;slot&#X201D; (<em>i.e.</em>, a maximal horizontal or vertical sequence of
+fill-able and pre-filled squares, and a word of the same length from
+the word list, fill the word into the slot in the puzzle, and remove
+the word from the word list. It is important that the word selected
+should agree with any letters that are already filled into the slot.
+Repeat this process until the puzzle is completely solved and the
+word list is empty.</li><li class="li-enumerate">To avoid writing much code to handle filling slots vertically,
+you can just transpose the puzzle, use operations to handle
+horizontal puzzle slots, and then transpose the puzzle back.
+It is easier to detect and handle horizontal slots than vertical
+ones.<p>The SWI Prolog library provides two different, incompatible
+<span style="font-family:monospace">transpose</span>/2 predicates, and unfortunately autoloads the
+wrong one by default. If you wish to use the correct one, you
+should put the line
+</p><pre class="verbatim">        :- ensure_loaded(library(clpfd)).
+</pre><p>in your source file. This defines the predicate
+<span style="font-family:monospace">transpose(</span><span style="font-style:italic">Matrix0, Matrix</span><span style="font-family:monospace">)</span> that holds
+when <span style="font-style:italic">Matrix0</span> and <span style="font-style:italic">Matrix</span> are lists of lists, and
+the &#X201C;columns&#X201D; of each are the &#X201C;rows&#X201D; of the other.</p></li><li class="li-enumerate"><a id="logicvar"></a>
+One of Prolog&#X2019;s features, known as the &#X201C;logical variable&#X201D; can
+make this job easier.
+You can construct a list of &#X201C;slots&#X201D; where each slot is a list of
+Prolog variables representing one square in the puzzle.
+If you make sure that the same variable is used for the same square,
+whether it appears in a vertical or horizontal slot, then Prolog
+will ensure that the letter placed in the box for a horizontal word
+is the same as for an intersecting vertical word.<p>For example, suppose you have a 3&#XD7;3 puzzle with the four corners
+filled in solid. This would be represented as a file with these
+lines:
+</p><div class="center">
+<pre class="verbatim">                                #_#
+                                ___
+                                #_#
+</pre></div><p>
+The slots in this puzzle could be represented as
+<span style="font-family:monospace">[[A,B,C], [X,B,Z]]</span>, in which case the filled-in puzzle will
+be <code>Filled = [['#',X,'#'], [A,B,C], ['#',Z,'#']]</code>.
+Then unifying <span style="font-family:monospace">[X,B,Z]</span> with <span style="font-family:monospace">[c,a,t]</span> will
+bind <span style="font-family:monospace">B</span> to <span style="font-family:monospace">a</span> in both lists, ensuring that
+the first list is only unified with a word that has an <span style="font-family:monospace">a</span>
+as second letter.
+Note that after the second list is unified with
+<span style="font-family:monospace">[c,a,t]</span>, <span style="font-family:monospace">Filled</span> will become
+<code>[['#',c,'#'], [A,a,C], ['#',t,'#']]</code>.
+Once the first list is unified, binding <span style="font-family:monospace">A</span> and <span style="font-family:monospace">C</span>,
+this will be the final solved puzzle.</p><p>With this approach, the list of slots is simply a permutation of the
+list of words.
+For small puzzles, it is sufficient to backtrack over permutations
+of the wordlist until it can be unified with the slot list.</p></li><li class="li-enumerate">As an alternative to Hint&#XA0;<a href="#logicvar">3</a>, you may instead approach
+the problem by repeatedly transforming the puzzle by filling in
+slots in the puzzle.
+With this approach, the 3&#XD7;3 puzzle discussed above would be
+represented as
+<div class="center">
+<code>[['#','_','#'], ['_','_','_'], ['#','_','#']]</code>
+</div>
+Filling in &#X201C;cat&#X201D; in the vertical slot would leave:
+<div class="center">
+<code>[['#',c,'#'], ['_',a,'_'], ['#',t,'#']]</code>
+</div>
+(again, it is easiest to work with horizontal slots; a vertical slot
+can be handled by transposing the puzzle, handling a horizontal
+slot, and then transposing again).
+As words are filled in, some of the letters of some slots will be
+filled in.
+Care must be taken when filling partially-filled slots to ensure the
+word being placed matches the letters already placed in that slot.
+Care must also be taken that a slot that has had all its letters
+filled by filling perpendicular words is in fact a word, and that
+word is removed from the word list.<p>This approach is simpler to understand than that of
+Hint&#XA0;<a href="#logicvar">3</a>, but requires considerably more code, and more work.</p></li><li class="li-enumerate"><a id="fastfail"></a>
+The number of permutations of a list of length <span style="font-style:italic">n</span> is <span style="font-style:italic">n</span>!.
+Even a 7&#XD7;7 puzzle may have 18 words, which has
+18! &gt; 10<sup>15</sup> permutations.
+Careful use of Prolog can substantially reduce this search space
+through the use of fast failure.
+That is, as each word is selected for its slot, it should be unified
+immediately with the slot.
+If this fails, then all further permutations involving that word in
+that slot can be discarded (Prolog will automatically do that).</li><li class="li-enumerate">Hint&#XA0;<a href="#fastfail">5</a> will allow medium-size puzzles to be solved.
+For larger puzzles, the power of the factorial is too great.
+To solve those, it is necessary to avoid more of the search space.
+This can be done by carefully choosing the order in which to place
+words in slots.
+For example, if there is only one 6-letter word, then place that
+first.
+Once that word is placed, some letters in others words will
+be filled in; perhaps one of them will have only one matching word,
+and so on.
+Each time a word is to be placed, you should count the number of
+words that match each slot, and select (one of) the slot(s) with the
+fewest matching words to fill.
+This minimises the search space.</li><li class="li-enumerate"><a id="no-search"></a>
+For some puzzles, as they are being filled in, there is always
+at least one slot that has only one word that can possibly fit.
+These puzzles are easier to solve, because no search is actually
+required. 30% of the test cases will be like this.</li></ol><!--TOC section id="sec7" Note Well:-->
+<h2 id="sec7" class="section">Note Well:</h2><!--SEC END --><p>
+<span style="font-weight:bold">This project is part of your final assessment, so cheating is not
+acceptable. Any form of material exchange between teams, whether written,
+electronic or any other medium, is considered cheating, and so is the
+soliciting of help from electronic newsgroups. Providing undue assistance is
+considered as serious as receiving it, and in the case of similarities that
+indicate exchange of more than basic ideas, formal disciplinary action will
+be taken for all involved parties. If you have questions regarding these
+rules, please ask the lecturer.
+</span></p><!--CUT END -->
+<!--HTMLFOOT-->
+<!--ENDHTML-->
+<!--FOOTER-->
+<hr style="height:2"><blockquote class="quote"><em>This document was translated from L<sup>A</sup>T<sub>E</sub>X by
+</em><a href="http://hevea.inria.fr/index.html"><em>H</em><em><span style="font-size:small"><sup>E</sup></span></em><em>V</em><em><span style="font-size:small"><sup>E</sup></span></em><em>A</em></a><em>.</em></blockquote></body>
+</html>

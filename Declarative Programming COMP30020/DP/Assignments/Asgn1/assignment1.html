@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta name="generator" content="hevea 2.23">
+<style type="text/css">
+.li-itemize{margin:1ex 0ex;}
+.li-enumerate{margin:1ex 0ex;}
+.dd-description{margin:0ex 0ex 1ex 4ex;}
+.dt-description{margin:0ex;}
+.toc{list-style:none;}
+.footnotetext{margin:0ex; padding:0ex;}
+div.footnotetext P{margin:0px; text-indent:1em;}
+.thefootnotes{text-align:left;margin:0ex;}
+.dt-thefootnotes{margin:0em;}
+.dd-thefootnotes{margin:0em 0em 0em 2em;}
+.footnoterule{margin:1em auto 1em 0px;width:50%;}
+.caption{padding-left:2ex; padding-right:2ex; margin-left:auto; margin-right:auto}
+.title{margin:2ex auto;text-align:center}
+.titlemain{margin:1ex 2ex 2ex 1ex;}
+.titlerest{margin:0ex 2ex;}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+.flushleft{text-align:left;margin-left:0ex;margin-right:auto;}
+.flushright{text-align:right;margin-left:auto;margin-right:0ex;}
+div table{margin-left:inherit;margin-right:inherit;margin-bottom:2px;margin-top:2px}
+td table{margin:auto;}
+table{border-collapse:collapse;}
+td{padding:0;}
+.cellpadding0 tr td{padding:0;}
+.cellpadding1 tr td{padding:1px;}
+pre{text-align:left;margin-left:0ex;margin-right:auto;}
+blockquote{margin-left:4ex;margin-right:4ex;text-align:left;}
+td p{margin:0px;}
+.boxed{border:1px solid black}
+.textboxed{border:1px solid black}
+.vbar{border:none;width:2px;background-color:black;}
+.hbar{border:none;height:2px;width:100%;background-color:black;}
+.hfill{border:none;height:1px;width:200%;background-color:black;}
+.vdisplay{border-collapse:separate;border-spacing:2px;width:auto; empty-cells:show; border:2px solid red;}
+.vdcell{white-space:nowrap;padding:0px; border:2px solid green;}
+.display{border-collapse:separate;border-spacing:2px;width:auto; border:none;}
+.dcell{white-space:nowrap;padding:0px; border:none;}
+.dcenter{margin:0ex auto;}
+.vdcenter{border:solid #FF8000 2px; margin:0ex auto;}
+.minipage{text-align:left; margin-left:0em; margin-right:auto;}
+.marginpar{border:solid thin black; width:20%; text-align:left;}
+.marginparleft{float:left; margin-left:0ex; margin-right:1ex;}
+.marginparright{float:right; margin-left:1ex; margin-right:0ex;}
+.theorem{text-align:left;margin:1ex auto 1ex 0ex;}
+.part{margin:2ex auto;text-align:center}
+</style>
+<title>assignment1</title>
+</head>
+<body >
+<!--HEVEA command line is: hevea assignment1.tex -->
+<!--CUT STYLE article--><!--CUT DEF section 1 --><div class="center">
+<span style="font-variant:small-caps"><span style="font-size:large">The University of Melbourne
+</span></span> <br>
+ <span style="font-size:large">Department of Computing and Information Systems
+</span> <br>
+ <span style="font-size:x-large">Declarative Programming
+</span> <br>
+ <span style="font-size:large">COMP30020/COMP90048
+</span> <br>
+ <span style="font-size:large">Semester 2, 2016
+</span> <br>
+ <span style="font-weight:bold"><span style="font-size:x-large">Project Specification</span></span> <br>
+ <span style="font-size:large"><em>Project due 
+Friday, 19 August 2016 at 5pm</em></span> <br>
+ <span style="font-size:large"><em>Worth
+5% (for students of COMP90048)</em></span>
+</div><p><br>
+<br>
+<br>
+</p><p>The objective of this project is to practice your Haskell programming
+skills. You will write a few fairly simple Haskell functions.</p><p><span style="font-weight:bold">Note well:</span>
+This project is only assigned for students enrolled in COMP90048.
+Other students are encouraged to do the exercise for practice, and may
+submit their work if they like, but it is not part of their
+assessment, so they will not receive credit for it.</p><!--TOC section id="sec1" The Assignment-->
+<h2 id="sec1" class="section">The Assignment</h2><!--SEC END --><p>You will implement the following Haskell functions.</p><ol class="enumerate" type=1><li class="li-enumerate">
+<code>elementPosition :: Eq t =&gt; t -&gt; [t] -&gt; Int</code> <br>
+ <span style="font-family:monospace">elementPosition</span> takes an element <span style="font-family:monospace">elt</span> and a list
+<span style="font-family:monospace">lst</span>, and returns the number of elements of <span style="font-family:monospace">lst</span> that
+must be skipped over to find the first occurrence of the of
+<span style="font-family:monospace">elt</span>. That is, it returns the zero-based index of the first
+occurrence of <span style="font-family:monospace">elt</span> on <span style="font-family:monospace">lst</span>.
+For example:
+<div class="center">
+<table style="border-spacing:6px;border-collapse:separate;" class="cellpading0"><tr><td style="text-align:left;white-space:nowrap" > <code>elementPosition 3 [1,2,3,4,5]</code></td><td style="text-align:right;white-space:nowrap" >should return</td><td style="text-align:left;white-space:nowrap" ><span style="font-family:monospace">2</span> </td></tr>
+<tr><td style="text-align:left;white-space:nowrap" > <code>elementPosition 'e' "elephant"</code></td><td style="text-align:right;white-space:nowrap" >should return</td><td style="text-align:left;white-space:nowrap" ><span style="font-family:monospace">0</span> </td></tr>
+<tr><td style="text-align:left;white-space:nowrap" > <code>elementPosition 'p' "elephant"</code></td><td style="text-align:right;white-space:nowrap" >should return</td><td style="text-align:left;white-space:nowrap" ><span style="font-family:monospace">3</span> </td></tr>
+<tr><td style="text-align:left;white-space:nowrap" > <code>elementPosition 'z' "elephant"</code></td><td style="text-align:right;white-space:nowrap" >should report an error </td></tr>
+</table>
+</div></li><li class="li-enumerate"><code>everyNth :: Int -&gt; [t] -&gt; [t]</code> <br>
+ <span style="font-family:monospace">everyNth</span> takes a number <span style="font-family:monospace">n</span> and a list <span style="font-family:monospace">lst</span>
+and returns a list of every <span style="font-family:monospace">n</span>th element of
+<span style="font-family:monospace">lst</span>, beginning with the <span style="font-family:monospace">n</span>th element of
+<span style="font-family:monospace">lst</span>.
+For example:
+<div class="center">
+<table style="border-spacing:6px;border-collapse:separate;" class="cellpading0"><tr><td style="text-align:left;white-space:nowrap" > <code>everyNth 4 "elephant"</code></td><td style="text-align:right;white-space:nowrap" >should return</td><td style="text-align:left;white-space:nowrap" ><code>"pt"</code> </td></tr>
+<tr><td style="text-align:left;white-space:nowrap" > <code>everyNth 2 [2,3,5,7,11,13,17]</code></td><td style="text-align:right;white-space:nowrap" >should return</td><td style="text-align:left;white-space:nowrap" ><span style="font-family:monospace">[3,7,13]</span> </td></tr>
+<tr><td style="text-align:left;white-space:nowrap" > <code>everyNth 1 [2,3,5,7,11,13,17]</code></td><td style="text-align:right;white-space:nowrap" >should return</td><td style="text-align:left;white-space:nowrap" ><span style="font-family:monospace">[2,3,5,7,11,13,17]</span> </td></tr>
+<tr><td style="text-align:left;white-space:nowrap" > <code>everyNth 0 [2,3,5,7,11,13,17]</code></td><td style="text-align:right;white-space:nowrap" >should report an error </td></tr>
+</table>
+</div></li><li class="li-enumerate"><code>elementBefore :: Eq a =&gt; a -&gt; [a] -&gt; Maybe a</code> <br>
+ <span style="font-family:monospace">elementBefore</span> takes an element <span style="font-family:monospace">elt</span> and a list
+<span style="font-family:monospace">lst</span>, and returns <span style="font-family:monospace">Just</span> the element immediately
+before the first occurrence of <span style="font-family:monospace">elt</span> in <span style="font-family:monospace">lst</span>, if it
+exists. 
+For example:
+<div class="center">
+<table style="border-spacing:6px;border-collapse:separate;" class="cellpading0"><tr><td style="text-align:left;white-space:nowrap" > <code>elementBefore 3 [1,2,3,4,5]</code></td><td style="text-align:right;white-space:nowrap" >should return</td><td style="text-align:left;white-space:nowrap" > <span style="font-family:monospace">Just 2</span> </td></tr>
+<tr><td style="text-align:left;white-space:nowrap" > <code>elementBefore 'h' "elephant"</code></td><td style="text-align:right;white-space:nowrap" >should return</td><td style="text-align:left;white-space:nowrap" > <span style="font-family:monospace">Just &#X2019;p&#X2019;</span> </td></tr>
+<tr><td style="text-align:left;white-space:nowrap" > <code>elementBefore 'z' "elephant"</code></td><td style="text-align:right;white-space:nowrap" >should return</td><td style="text-align:left;white-space:nowrap" > <span style="font-family:monospace">Nothing</span> </td></tr>
+<tr><td style="text-align:left;white-space:nowrap" > <code>elementBefore 'e' "elephant"</code></td><td style="text-align:right;white-space:nowrap" >should return</td><td style="text-align:left;white-space:nowrap" > <span style="font-family:monospace">Nothing</span> </td></tr>
+</table>
+</div>
+</li></ol><p>You must call your source file <span style="font-family:monospace">Assignment1.hs</span> or
+<span style="font-family:monospace">Assignment1.lhs</span> (note the capitalisation), and it must begin
+with the module declaration:
+</p><pre>
+  module Assignment1 (elementPosition, everyNth, elementBefore) where
+</pre><p>I will post on the LMS a test driver program called
+<span style="font-family:monospace">Assignment1</span><span style="font-family:monospace">Test</span> which is substantially similar to the test
+driver I will use for testing your code. I will compile
+and link your code for testing using the following command (or similar):
+</p><pre>
+  &#XA0;ghc -O2 --make Assignment1Test
+</pre><!--TOC section id="sec2" Assessment-->
+<h2 id="sec2" class="section">Assessment</h2><!--SEC END --><p>Your project will be assessed 100% on correctness. For this
+assignment, code quality will not be considered. However, for your
+own sanity, I do recommend commenting your code and programming it
+carefully, paying due attention to programming technique.</p><p>Note that timeouts will be imposed on all tests. Test cases will be
+rather small, so the timeouts should only affect you if you create
+an infinite recursion (infinite loop).</p><!--TOC section id="sec3" Submission-->
+<h2 id="sec3" class="section">Submission</h2><!--SEC END --><p>You <span style="font-weight:bold">must</span> submit your project from either of the unix servers
+<span style="font-weight:bold"><span style="font-family:monospace">dimefox.eng.unimelb.edu.au</span></span> or
+<span style="font-weight:bold"><span style="font-family:monospace">nutmeg.eng.unimelb.edu.au</span></span>.
+Make sure the version of your program source files
+you wish to submit is on this host, then <span style="font-family:monospace">cd</span> to the directory
+holding your source code and issue the command:
+</p><pre>
+    submit COMP90048 assignment1 Assignment1.hs
+</pre><p>
+(or substitute <span style="font-family:monospace">Assignment1</span><span style="font-family:monospace">.lhs</span> for <span style="font-family:monospace">Assignment1</span><span style="font-family:monospace">.hs</span> if
+you are writing in literate Haskell).</p><p><span style="font-weight:bold">Important:</span> you must wait a minute or two (or more if the
+servers are busy) after submitting, and then issue the command
+</p><pre>
+    verify COMP90048 assignment1 | less
+</pre><p>
+This
+will show you the test results from your submission, as well as the
+file(s) you submitted. If the test results show any problems, correct
+them and submit again. You may submit as often as you like; only your
+final submission will be assessed.</p><p>If you wish to (re-)submit after the project deadline, you may do so
+by adding &#X201C;<span style="font-family:monospace">.late</span>&#X201D; to the end of the project name
+(<em>i.e.,</em> <span style="font-family:monospace">assignment1.late</span>) in the <span style="font-family:monospace">submit</span> and
+<span style="font-family:monospace">verify</span> commands. But note that a penalty, described below,
+will apply to late submissions, so you should weigh the points you
+will lose for a late submission against the points you expect to gain
+by revising your program and submitting again.</p><p><span style="font-weight:bold">It is your responsibility to verify your submission.</span></p><p>Your submission will be tested on one of the servers you are required
+to submit from. These servers run GHC version 7.0.4, which is
+probably older than the version you will develop on. You are advised
+to test your program on one of these servers before submitting; in the
+unlikely case that your program uses some Haskell features not
+supported by GHC 7.0.4, it will be much easier to discover this.</p><p>Note that these hosts are only available through the university&#X2019;s
+network. If you wish to use these machines from off campus, you will
+need to use the university&#X2019;s Virtual Private Network.
+The LMS Resources list gives instructions.</p><p>Windows users should see the LMS Resources list for instructions for
+downloading the (free) MobaXterm or Putty and Winscp programs to allow
+you to use 
+and copy files to the department servers from windows computers. Mac
+OS X and Linux users can use the <span style="font-family:monospace">ssh</span>, <span style="font-family:monospace">scp</span>, and <span style="font-family:monospace">sftp</span>
+programs that come with your operating system.</p><!--TOC subsection id="sec4" Late Penalties-->
+<h3 id="sec4" class="subsection">Late Penalties</h3><!--SEC END --><p>
+Late submissions will incur a penalty of 0.5% of the possible value of that
+submission per hour 
+late, including evening and weekend hours.
+Late submissions will incur a penalty of 0.5% per hour late,
+including evening and weekend hours. This means that a perfect
+project that is much more than 4 days late will receive less than half
+the marks for the project. If you have a
+medical or similar compelling reason for being late, you should contact 
+the lecturer
+as early as possible to ask for an extension
+(preferably before the due date).</p><!--TOC section id="sec5" Note Well:-->
+<h2 id="sec5" class="section">Note Well:</h2><!--SEC END --><p>
+<span style="font-weight:bold">This project is part of your final assessment, so cheating is not
+acceptable. Any form of material exchange between teams, whether written,
+electronic or any other medium, is considered cheating, and so is the
+soliciting of help from electronic newsgroups. Providing undue assistance is
+considered as serious as receiving it, and in the case of similarities that
+indicate exchange of more than basic ideas, formal disciplinary action will
+be taken for all involved parties. If you have questions regarding these
+rules, please ask the lecturer.
+</span></p><!--CUT END -->
+<!--HTMLFOOT-->
+<!--ENDHTML-->
+<!--FOOTER-->
+<hr style="height:2"><blockquote class="quote"><em>This document was translated from L<sup>A</sup>T<sub>E</sub>X by
+</em><a href="http://hevea.inria.fr/index.html"><em>H</em><em><span style="font-size:small"><sup>E</sup></span></em><em>V</em><em><span style="font-size:small"><sup>E</sup></span></em><em>A</em></a><em>.</em></blockquote></body>
+</html>

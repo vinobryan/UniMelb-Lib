@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta name="generator" content="hevea 2.23">
+<style type="text/css">
+.li-itemize{margin:1ex 0ex;}
+.li-enumerate{margin:1ex 0ex;}
+.dd-description{margin:0ex 0ex 1ex 4ex;}
+.dt-description{margin:0ex;}
+.toc{list-style:none;}
+.footnotetext{margin:0ex; padding:0ex;}
+div.footnotetext P{margin:0px; text-indent:1em;}
+.thefootnotes{text-align:left;margin:0ex;}
+.dt-thefootnotes{margin:0em;}
+.dd-thefootnotes{margin:0em 0em 0em 2em;}
+.footnoterule{margin:1em auto 1em 0px;width:50%;}
+.caption{padding-left:2ex; padding-right:2ex; margin-left:auto; margin-right:auto}
+.title{margin:2ex auto;text-align:center}
+.titlemain{margin:1ex 2ex 2ex 1ex;}
+.titlerest{margin:0ex 2ex;}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+.flushleft{text-align:left;margin-left:0ex;margin-right:auto;}
+.flushright{text-align:right;margin-left:auto;margin-right:0ex;}
+div table{margin-left:inherit;margin-right:inherit;margin-bottom:2px;margin-top:2px}
+td table{margin:auto;}
+table{border-collapse:collapse;}
+td{padding:0;}
+.cellpadding0 tr td{padding:0;}
+.cellpadding1 tr td{padding:1px;}
+pre{text-align:left;margin-left:0ex;margin-right:auto;}
+blockquote{margin-left:4ex;margin-right:4ex;text-align:left;}
+td p{margin:0px;}
+.boxed{border:1px solid black}
+.textboxed{border:1px solid black}
+.vbar{border:none;width:2px;background-color:black;}
+.hbar{border:none;height:2px;width:100%;background-color:black;}
+.hfill{border:none;height:1px;width:200%;background-color:black;}
+.vdisplay{border-collapse:separate;border-spacing:2px;width:auto; empty-cells:show; border:2px solid red;}
+.vdcell{white-space:nowrap;padding:0px; border:2px solid green;}
+.display{border-collapse:separate;border-spacing:2px;width:auto; border:none;}
+.dcell{white-space:nowrap;padding:0px; border:none;}
+.dcenter{margin:0ex auto;}
+.vdcenter{border:solid #FF8000 2px; margin:0ex auto;}
+.minipage{text-align:left; margin-left:0em; margin-right:auto;}
+.marginpar{border:solid thin black; width:20%; text-align:left;}
+.marginparleft{float:left; margin-left:0ex; margin-right:1ex;}
+.marginparright{float:right; margin-left:1ex; margin-right:0ex;}
+.theorem{text-align:left;margin:1ex auto 1ex 0ex;}
+.part{margin:2ex auto;text-align:center}
+</style>
+<title>proj1</title>
+</head>
+<body >
+<!--HEVEA command line is: hevea proj1.tex -->
+<!--CUT STYLE article--><!--CUT DEF section 1 --><div class="center">
+<span style="font-variant:small-caps"><span style="font-size:large">The University of Melbourne
+</span></span> <br>
+ <span style="font-size:large">Department of Computing and Information Systems
+</span> <br>
+ <span style="font-size:x-large">Declarative Programming
+</span> <br>
+ <span style="font-size:large">COMP30020/COMP90048
+</span> <br>
+ <span style="font-size:large">Semester 2, 2016
+</span> <br>
+ <span style="font-weight:bold"><span style="font-size:x-large">Project Specification</span></span> <br>
+ <span style="font-size:large"><em>Project due 
+Monday, 12 September 2016 at 5pm</em></span> <br>
+ <span style="font-size:large"><em>Worth
+15%</em></span>
+</div><p><br>
+<br>
+<br>
+</p><p>The objective of this project is to practice and assess your
+understanding of functional programming and Haskell. You will write code to
+implement a logical deduction game.</p><!--TOC section id="sec1" The Game-->
+<h2 id="sec1" class="section">The Game</h2><!--SEC END --><p>For this project, you will implement a two-player logical guessing game.
+Two players face each other, each with a
+complete standard deck of western playing cards (without jokers). One player
+will be the <em>answerer</em> and the other is the <em>guesser</em>. The
+answerer begins by selecting some number of cards from his or her deck without
+showing the guesser. These cards will form the <em>answer</em> for this
+game. The aim of the game is for the guesser to guess the answer.</p><p>Once the answerer has selected the answer, the guesser chooses the
+same number of
+cards from his or her deck to form the <em>guess</em>
+and shows them to the
+answerer. The answerer responds by telling the guesser these five
+numbers as <em>feedback</em> for the guess:
+</p><ol class="enumerate" type=1><li class="li-enumerate">
+How many of the cards in the answer are also in the guess
+(<em>correct cards</em>).
+</li><li class="li-enumerate">How many cards in the answer have rank lower than
+the lowest rank in the guess (<em>lower ranks</em>). Ranks,
+in order from low to high, are 2&#X2013;10, Jack, Queen, King, and Ace.
+</li><li class="li-enumerate">How many of the cards in the answer have the same rank as a card
+in the guess (<em>correct ranks</em>). For this, each card in the guess is
+only counted once. That is, if the answer has two queens and the
+guess has one, the correct ranks number would be 1, not 2. Likewise
+if there is one queen in the answer and two in the guess.
+</li><li class="li-enumerate">How many cards in the answer have rank higher than
+the highest rank in the guess (<em>higher ranks</em>).
+</li><li class="li-enumerate">How many of the cards in the answer have the same suit as a card
+in the guess, only counting a card in the guess once
+(<em>correct suits</em>). For example, if the answer has two clubs and the guess has
+one club, or vice versa, the correct suits number would be 1, not 2.
+</li></ol><p>
+Note that the order of the cards in the answer and the guess is
+immaterial, and that, since they come from a single deck, cards cannot
+be repeated in either answer or guess.</p><p>The guesser then guesses again, and receives feedback for the new
+guess, repeating the process until the guesser guesses the answer
+correctly. The object of the game for the
+guesser is to guess the answer with the fewest possible guesses.</p><p>A few examples of the feedback for a given answer and guess:
+</p><div class="center">
+<table border=1  style="border-spacing:0;" class="cellpadding1"><tr><td style="text-align:center;border:solid 1px;white-space:nowrap" ><span style="font-weight:bold">Answer</span></td><td style="text-align:center;border:solid 1px;white-space:nowrap" ><span style="font-weight:bold">Guess</span></td><td style="text-align:center;border:solid 1px;white-space:nowrap" ><span style="font-weight:bold">Feedback</span></td><td style="text-align:center;border:solid 1px;white-space:nowrap" ><span style="font-weight:bold">Explanation</span> </td></tr>
+<tr><td style="vertical-align:top;text-align:center;border:solid 1px;white-space:nowrap" > 3&#X2663;,4&#X2665;</td><td style="vertical-align:top;text-align:center;border:solid 1px;white-space:nowrap" >4&#X2665;,3&#X2663;</td><td style="vertical-align:top;text-align:center;border:solid 1px;white-space:nowrap" >2,0,2,0,2</td><td style="vertical-align:top;text-align:left;border:solid 1px;" > 2 answer cards match guess cards,
+no answer cards less than a 3,
+2 answer cards match guess ranks,
+no answer cards greater than a 4,
+2 answer cards match guess suits.
+</td></tr>
+<tr><td style="vertical-align:top;text-align:center;border:solid 1px;white-space:nowrap" > 3&#X2663;,4&#X2665;</td><td style="vertical-align:top;text-align:center;border:solid 1px;white-space:nowrap" >3&#X2663;,3&#X2665;</td><td style="vertical-align:top;text-align:center;border:solid 1px;white-space:nowrap" >1,0,1,1,2</td><td style="vertical-align:top;text-align:left;border:solid 1px;" > 1 exact match (3&#X2663;),
+no answer cards less than a 3,
+1 answer card matches a guess rank,
+1 answer card greater than a 3,
+2 answer cards match guess suits.
+</td></tr>
+<tr><td style="vertical-align:top;text-align:center;border:solid 1px;white-space:nowrap" > 3&#X2666;,3&#X2665;</td><td style="vertical-align:top;text-align:center;border:solid 1px;white-space:nowrap" >3&#X2660;,3&#X2663;</td><td style="vertical-align:top;text-align:center;border:solid 1px;white-space:nowrap" >0,0,2,0,0</td><td style="vertical-align:top;text-align:left;border:solid 1px;" > No exact matches,
+no answer cards less than a 3,
+2 answer cards match a guess rank,
+no answer cards greater than a 3,
+no answer cards match guess suits.
+</td></tr>
+<tr><td style="vertical-align:top;text-align:center;border:solid 1px;white-space:nowrap" > 3&#X2663;,4&#X2665;</td><td style="vertical-align:top;text-align:center;border:solid 1px;white-space:nowrap" >2&#X2665;,3&#X2665;</td><td style="vertical-align:top;text-align:center;border:solid 1px;white-space:nowrap" >0,0,1,1,1</td><td style="vertical-align:top;text-align:left;border:solid 1px;" > No exact matches,
+no answer cards less than a 2,
+1 answer card matches a guess rank (the 3),
+1 answer card greater than a 3,
+1 answer card match a guess suit (&#X2665;).
+</td></tr>
+<tr><td style="vertical-align:top;text-align:center;border:solid 1px;white-space:nowrap" > A&#X2663;,2&#X2663;</td><td style="vertical-align:top;text-align:center;border:solid 1px;white-space:nowrap" >3&#X2663;,4&#X2665;</td><td style="vertical-align:top;text-align:center;border:solid 1px;white-space:nowrap" >0,1,0,1,1</td><td style="vertical-align:top;text-align:left;border:solid 1px;" > No exact matches,
+1 answer card less than a 3 (the 2; A is high),
+no answer card matches a guess rank,
+1 answer card greater than a 4 (the A),
+1 answer card match a guess suit (either &#X2663;; you can only
+count 1 because there&#X2019;s only 1 &#X2663; in the guess).
+</td></tr>
+</table>
+</div><!--TOC section id="sec2" The Program-->
+<h2 id="sec2" class="section">The Program</h2><!--SEC END --><p>
+For this assignment,
+you will write Haskell code to implement code for both the
+<em>answerer</em> and <em>guesser</em> parts of
+the game. This will require you to write a function to evaluate a
+guess to produce feedback, one to provide an initial guess, and one
+to use the feedback from the previous guess
+to determine the next guess. The latter function will be called
+repeatedly until it produces the correct guess. You will find it
+useful to keep information between guesses; since Haskell is a purely
+functional language, you cannot use a global or static variable to
+store this. Therefore, your initial guess function must return this
+game state information, and your next guess function must take the
+game state as input and return the updated game state as output. You
+may put any information you like in the game state, but you
+<span style="font-style:italic">must</span> define a type <span style="font-family:monospace">GameState</span> to hold this
+information.</p><p>I will supply a <span style="font-family:monospace">Card</span> module providing the <span style="font-family:monospace">Card</span>,
+<span style="font-family:monospace">Rank</span>, and <span style="font-family:monospace">Suit</span> types and their constructors. This
+implementation has a few enhancements from the types presented in
+lectures. First, all three types are in the <span style="font-family:monospace">Eq</span> class. All
+are also in the <span style="font-family:monospace">Bounded</span> and <span style="font-family:monospace">Enum</span> class, which means,
+for example, that <span style="font-family:monospace">[minBound..maxBound]::[Card]</span> is the list of
+all cards in order, from 2&#X2663;to A&#X2660;, and similarly 
+<span style="font-family:monospace">[minBound..maxBound]::[Rank]</span> is the list of ranks from 2 to
+Ace, and similarly for <span style="font-family:monospace">Suit</span>. This also means that, for
+example, <span style="font-family:monospace">succ (Card Club R5) == (Card Club R6)</span> and
+<span style="font-family:monospace">succ (Card Heart Ace) == (Card Spade R2)</span>.
+Read the documentation for
+<span style="font-family:monospace">Bounded</span> and <span style="font-family:monospace">Enum</span> classes for more things you can do
+with them.</p><p>The <span style="font-family:monospace">Rank</span> and <span style="font-family:monospace">Suit</span> types are also in the <span style="font-family:monospace">Ord</span>
+class, so for example <span style="font-family:monospace">Ace &gt; King</span> and <span style="font-family:monospace">Heart &lt; Spade</span>.
+For convenience, all three types are also in the <span style="font-family:monospace">Show</span> class
+so that ranks and suits are shown as a single
+character (10 is shown as <span style="font-family:monospace">T</span>), and cards as two characters:
+rank followed by suit. All three are also in the Read class, which
+means that, for example, <span style="font-family:monospace">(read "[2C,AH]")::[Card]</span> returns the
+list <span style="font-family:monospace">[Card Club R2, Card Heart Ace]</span> (which would be printed
+as <span style="font-family:monospace">[2C,AH]</span>).</p><p>You must define the following three functions, as well as the
+<span style="font-family:monospace">GameState</span> type:
+</p><dl class="description"><dt class="dt-description"><span style="font-weight:bold">feedback :: [Card] </span>&#X2192;<span style="font-weight:bold"> [Card] </span>&#X2192;<span style="font-weight:bold"> (Int,Int,Int,Int,Int)</span></dt><dd class="dd-description">
+ <br>
+ takes a target and a guess (in that order), each represented as a list of
+<span style="font-family:monospace">Card</span>s, and returns the five feedback numbers,
+as explained above, as a tuple.
+</dd><dt class="dt-description"><span style="font-weight:bold">initialGuess :: Int </span>&#X2192;<span style="font-weight:bold"> ([Card],GameState)</span></dt><dd class="dd-description">  <br>
+ takes the number of cards in the answer as input and returns a
+pair of an initial guess, which should be a list of the specified
+number of cards, and a game state. The number of cards
+specified will be 2 for most of the test, and 3 or 4 for the
+remaining tests, as explained below.
+</dd><dt class="dt-description"><span style="font-weight:bold">nextGuess :: ([Card],GameState) </span>&#X2192;<span style="font-weight:bold"> (Int,Int,Int,Int,Int)
+</span>&#X2192;<span style="font-weight:bold"> ([Card],GameState)</span></dt><dd class="dd-description">  <br>
+ takes as input a pair of the previous guess and game state, and
+the feedback to this guess as a quintuple of counts of correct
+cards, low ranks, correct ranks, high ranks, and correct suits,
+and returns a pair of the next guess and new game state.
+</dd></dl><p>You must call your (main) source file <span style="font-family:monospace">Proj1.hs</span> or
+<span style="font-family:monospace">Proj1.lhs</span>, and it must contain the module declaration:
+</p><pre class="verbatim">    module Proj1 (feedback, initialGuess, nextGuess, GameState) where
+</pre><p>You may divide your code into as many files as you like, as long as
+your main file (and the files it imports) imports all the others. But
+do not feel you need to divide your program into many files if it is
+reasonably small.</p><p>I will also provide a test driver program called
+<span style="font-family:monospace">Proj1test.hs</span> to allow you to conveniently test your
+<span style="font-family:monospace">Proj1</span> implementation. You can specify the cards of
+the answer on the command line, and the program will print out each
+guess and the corresponding feedback and report the number of guesses
+needed to find the answer. The <span style="font-family:monospace">Proj1test.hs</span> is
+similar to the test
+driver I will use for testing your code. You can compile
+and link your code for testing using the command:
+</p><pre class="verbatim">    ghc -O2 --make Proj1test
+</pre><p>I will use a similar command to compile your code in preparation for
+testing.</p><!--TOC section id="sec3" Assessment-->
+<h2 id="sec3" class="section">Assessment</h2><!--SEC END --><p>Your project will be assessed on the following criteria:
+</p><dl class="description"><dt class="dt-description"> 
+<span style="font-weight:bold">30%</span></dt><dd class="dd-description"> Quality of your code and documentation;
+</dd><dt class="dt-description"><span style="font-weight:bold">10%</span></dt><dd class="dd-description"> Correctness of your implementation of <span style="font-family:monospace">feedback</span>.
+</dd><dt class="dt-description"><span style="font-weight:bold">20%</span></dt><dd class="dd-description"> Correctness of your implementation of
+<span style="font-family:monospace">initialGuess</span> and <span style="font-family:monospace">nextGuess</span> for 2-card targets
+</dd><dt class="dt-description"><span style="font-weight:bold">30%</span></dt><dd class="dd-description"> Quality of the guesses made by your implementation, as
+indicated by the number of guesses needed to find 2-card targets;
+</dd><dt class="dt-description"><span style="font-weight:bold">10%</span></dt><dd class="dd-description"> Correctness and quality of your guesses for 3- and 4-card targets.
+</dd></dl><p>
+The supplied
+<span style="font-family:monospace">Proj1test</span> implementation will use the number of cards
+specified on the command line to determine the number to specify to
+the <span style="font-family:monospace">initialGuess</span> function.</p><p>Note that timeouts will be imposed on all tests. You will have at least 10
+seconds to guess each answer, regardless of how many guesses are needed.
+Executions taking longer than that may be unceremoniously terminated,
+leading to that test being assessed as failing. Your programs will be
+compiled with <span style="font-family:monospace">ghc -O2</span> (optimisation enabled) before testing, so
+10 seconds per test 
+is a very reasonable limit. The same 10 second timeout will apply to
+the 3 and 4 card test cases.</p><p>See the Project Coding Guidelines on the LMS for detailed recommendations
+for coding style. These guidelines will form the basis of the
+quality assessment of your code and documentation, which is worth 30%
+of the project mark, so read them carefully.</p><!--TOC section id="sec4" Submission-->
+<h2 id="sec4" class="section">Submission</h2><!--SEC END --><p>The project submission deadline is Monday, 12 September 2016 at 5pm.</p><p>You must submit your project from one of the unix servers <span style="font-family:monospace">nutmeg.eng.unimelb.edu.au</span> or 
+<span style="font-family:monospace">dimefox.eng.unimelb.edu.au</span>.
+Make sure the version of your program source files
+you wish to submit is on this host, and then <span style="font-family:monospace">cd</span> to the directory
+holding your source code and issue the command:
+</p><pre>
+    submit COMP90048 proj1 Proj1.hs
+</pre><p>
+If your code spans multiple source files, add the extra ones to the
+end of that command line.</p><p><span style="font-weight:bold">Important:</span> you must wait a few minutes
+after submitting, and then issue the command
+</p><pre>
+    verify COMP90048 proj1 | less
+</pre><p>
+This
+will show you the test results from your submission, as well as the
+file(s) you submitted.
+If your program
+compiles and runs properly, you should see the line &#X201C;<span style="font-family:monospace">Running
+tests</span>&#X201D;, followed by forty test runs, each showing the number of guesses
+your program took. If you do not see test runs like this, then your
+program did not work correctly.
+If the test results show any problems, correct
+them and submit again. You may submit as often as you like; only your
+final submission will be assessed.</p><p>If you wish to (re-)submit after the project deadline, you may do so
+by adding &#X201C;<span style="font-family:monospace">.late</span>&#X201D; to the end of the project name
+(<em>i.e.,</em> <span style="font-family:monospace">proj1.late</span>) in the <span style="font-family:monospace">submit</span> and
+<span style="font-family:monospace">verify</span> commands. But note that a penalty, described below,
+will apply to late submissions, so you should weigh the points you
+will lose for a late submission against the points you expect to gain
+by revising your program and submitting again.</p><p><span style="font-weight:bold">It is your responsibility to verify your submission.</span></p><p>Windows users should see the LMS Resources list for instructions for
+downloading the (free) Putty and Winscp programs to allow you to use
+and copy files to the department servers from windows computers. Mac
+OS X and Linux users can use the <span style="font-family:monospace">ssh</span>, <span style="font-family:monospace">scp</span>, and <span style="font-family:monospace">sftp</span>
+programs that come with your operating system.</p><!--TOC subsection id="sec5" Late Penalties-->
+<h3 id="sec5" class="subsection">Late Penalties</h3><!--SEC END --><p>
+Late submissions will incur a penalty of 0.5% of the possible value of that
+submission per hour late, including evening and weekend hours.
+This means that a perfect
+project that is much more than 4 days late will receive less than half
+the marks for the project. If you have a
+medical or similar compelling reason for being late, you should contact 
+the lecturer
+as early as possible to ask for an extension
+(preferably before the due date).</p><!--TOC section id="sec6" Hints-->
+<h2 id="sec6" class="section">Hints</h2><!--SEC END --><ol class="enumerate" type=1><li class="li-enumerate">
+A very simple approach to this program is to simply guess every
+possible combination of different cards until you guess right.
+There are only 52&#XD7;51/2 = 1326 possible answers, so on average
+it should only take about 663 guesses, making it perfectly feasible
+to do in 10 seconds. However, this will give a very poor score for
+guess quality.</li><li class="li-enumerate">A better approach would be to only make guesses that are
+consistent with the answers you have received for previous guesses.
+You can do this by computing the list of possible answers, and
+removing elements that are inconsistent with any answers you have
+received to previous guesses. A possible answer is inconsistent
+with an answer you have received for a previous guess if the answer
+you would receive for that guess and that (possible) answer is
+different from the answer you actually received for that guess. For
+two-card answers, the initial list of possible guesses is only 1326
+elements, and rapidly shrinks with feedback, so this is quite
+feasible. This scales up to about 5 cards, when the initial number
+of possible guesses is 2,598,960. Beyond that, another strategy
+would need to be used, but you only need to handle 2 to 4 cards.<p>You can use your <span style="font-family:monospace">GameState</span> type to store the list of
+remaining possible answers, and pare it down each time you receive
+feedback for a guess.</p></li><li class="li-enumerate">The best results can be had by carefully choosing a guess that
+is likely to leave you the smallest remaining list of possible
+answers. You can do this by computing, for each remaining possible
+answer, the average number of possible answers it will leave if you
+guess it.
+Given a candidate guess G (which should be selected from the
+remaining possible answers), compute
+the feedback you will receive for each possible answer A if G is the
+guess and A is the answer. If you group all the As by the feedback
+they give you, your aim is to have many small groups, because that
+means if you make G your guess, that will probably leave few possible
+answers when you receive the feedback. Therefore the expected
+number of remaining possible answers for that guess is the average
+of the sizes of these groups, weighted by the sizes of the groups.
+That is, it is the sum of the squares of the group sizes divided by
+the sum of the group sizes.</li><li class="li-enumerate">For the first guess, when the list of possible answers is at its
+longest, you may want to use a different approach. Given the way
+the feedback works, the best first guess would be to choose two
+cards of different suits and with ranks about equally distant
+from each other and from the top and bottom ranks. In general, for
+an <span style="font-style:italic">n</span> card answer, you should choose ranks that are about
+13/(<span style="font-style:italic">n</span>+1) ranks apart.</li><li class="li-enumerate">Note that these are just hints; you are welcome to use any
+approach you like to solve this, as long as it is correct and runs
+within the allowed time.</li><li class="li-enumerate">For a two card answer, with a good guessing strategy such as
+outlined above, 4 or 5 guesses is usually enough to guess it.
+Surprisingly, adding more cards does not increase the number of
+guesses needed very much.
+</li></ol><!--TOC section id="sec7" Note Well:-->
+<h2 id="sec7" class="section">Note Well:</h2><!--SEC END --><p>
+<span style="font-weight:bold">This project is part of your final assessment, so cheating is not
+acceptable. Any form of material exchange between teams, whether written,
+electronic or any other medium, is considered cheating, and so is the
+soliciting of help from electronic newsgroups. Providing undue assistance is
+considered as serious as receiving it, and in the case of similarities that
+indicate exchange of more than basic ideas, formal disciplinary action will
+be taken for all involved parties. If you have questions regarding these
+rules, please ask the lecturer.
+</span></p><!--CUT END -->
+<!--HTMLFOOT-->
+<!--ENDHTML-->
+<!--FOOTER-->
+<hr style="height:2"><blockquote class="quote"><em>This document was translated from L<sup>A</sup>T<sub>E</sub>X by
+</em><a href="http://hevea.inria.fr/index.html"><em>H</em><em><span style="font-size:small"><sup>E</sup></span></em><em>V</em><em><span style="font-size:small"><sup>E</sup></span></em><em>A</em></a><em>.</em></blockquote></body>
+</html>

@@ -1,0 +1,28 @@
+Declarative Programming
+
+Workshop exercises set 4.
+
+QUESTION 1
+Write a Haskell version of the tree sort algorithm, which inserts
+all the to-be-sorted data items into a binary search tree, then performs
+an inorder traversal to extract the items in sorted order. Use simple
+structural induction where possible.
+
+QUESTION 2
+Write a Haskell function to "transpose" a list of lists. You may assume that
+all lists are non-empty, and that the inner lists are all the same length.
+If you are given a list of N lists, each of length M, the result should be
+a list of M lists, each of length N. For example,
+
+        transpose [[1,2],[4,4],[8,9]]
+
+should return
+
+	[[1,4,8],[2,4,9]]
+
+QUESTION 3
+Write a Haskell function which takes a list of numbers and returns
+a triple containing the length, the sum of the numbers, and the sum of the
+squares of the numbers. Try coding this with (1) three separate traversals
+of the list and (2) a single traversal of the list.
+

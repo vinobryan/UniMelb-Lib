@@ -1,0 +1,14 @@
+-- Boolean and int expressions, along with an interpreter for them.
+
+data BoolExpr
+    = BoolConst Bool
+    | BoolOp BoolOp BoolExpr BoolExpr
+    | CompOp CompOp IntExpr IntExpr
+data IntExpr
+    = IntConst Int
+    | IntOp IntOp IntExpr IntExpr
+    | IntIfThenElse BoolExpr IntExpr IntExpr
+data BoolOp = And
+data CompOp = LessThan
+data IntOp = Plus | Times
+
