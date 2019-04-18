@@ -12,6 +12,7 @@ public class World {
 	private Map map;
 	private Player player;
 	private Camera camera;
+	private static final int RIGHTCLICK = 1;
 	
 	/** Construct a world, initialising map, player
 	 * 
@@ -27,7 +28,7 @@ public class World {
 	 * @param delta
 	 */
 	public void update(Input input, int delta) {
-		if (input.isMouseButtonDown(0)) {
+		if (input.isMouseButtonDown(RIGHTCLICK)) {
 			float destX = input.getMouseX() + camera.getLeft();
 			float destY = input.getMouseY() + camera.getTop();
 			player.setDestX(destX, destY);
