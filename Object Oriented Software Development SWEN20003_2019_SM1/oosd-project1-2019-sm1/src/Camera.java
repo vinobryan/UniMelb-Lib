@@ -1,10 +1,9 @@
 import org.newdawn.slick.Graphics;
 
+
 /**
- * This class should be used to restrict the game's view to a subset of the entire world.
- * 
- * You are free to make ANY modifications you see fit.
- * These classes are provided simply as a starting point. You are not strictly required to use them.
+ * @author Jiayin
+ *
  */
 public class Camera {
 	
