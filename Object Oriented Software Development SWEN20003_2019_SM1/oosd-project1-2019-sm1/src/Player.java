@@ -96,8 +96,8 @@ public class Player {
 	 * @return
 	 */
 	private boolean isDestination(float diffX, float diffY) {
-		return diffX <= DESTINATIONTHRESHOLD && diffY <= DESTINATIONTHRESHOLD
-				&& diffX >=0 && diffY >=0;
+		float distance = (float) Math.sqrt(diffX*diffX + diffY*diffY);
+		return distance <= DESTINATIONTHRESHOLD && distance >=0;
 	}
 
 	/** Get player's X coordinate
