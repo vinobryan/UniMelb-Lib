@@ -1,0 +1,36 @@
+/**
+ * COMP90015 Distributed Systems
+ * 2018 Semester 1 - Project 2
+ * Team Spicy Hot Pot
+ * Duer Wang           824325  minghaow1@student.unimelb.edu.au
+ * Ivan Ken Weng Chee  736901  ichee@student.unimelb.edu.au
+ * Yue Yang            920577  yuey16@student.unimelb.edu.au
+ * Ziren Xiao          675485  zirenx@student.unimelb.edu.au
+ */
+
+{"command": "ACTIVITY_BROADCAST", "activity": {}}
+{"command": "ACTIVITY_MESSAGE", "username": "aaron", "secret": "fmnmpp3ai91qb3gc2bvs14g3ue", "activity": {}}
+
+{"command": "AUTHENTICATE", "secret": "fmnmpp3ai91qb3gc2bvs14g3ue"}
+{"command": "AUTHENTICATION_FAIL", "info": "the supplied secret is incorrect: fmnmpp3ai91qb3gc2bvs14g3ue"}
+
+{"command": "INVALID_MESSAGE", "info": "the received message did not contain a command"}
+{"command": "INVALID_MESSAGE", "info": "JSON parse error while parsing message"}
+
+{"command": "LOCK_ALLOWED", "username": "aaron", "secret": "fmnmpp3ai91qb3gc2bvs14g3ue"}
+{"command": "LOCK_DENIED", "username": "aaron", "secret": "fmnmpp3ai91qb3gc2bvs14g3ue"}
+{"command": "LOCK_REQUEST", "username": "aaron", "secret": "fmnmpp3ai91qb3gc2bvs14g3ue"}
+
+{"command": "LOGIN", "username": "aaron", "secret": "fmnmpp3ai91qb3gc2bvs14g3ue"}
+{"command": "LOGIN_FAILED", "info": "attempt to login with wrong secret"}
+{"command": "LOGIN_SUCCESS", "info": "logged in as user aaron"}
+
+{"command": "LOGOUT"}
+
+{"command": "REDIRECT", "hostname": "123.456.78.9", "port": 1234}
+
+{"command": "REGISTER", "username": "aaron", "secret": "fmnmpp3ai91qb3gc2bvs14g3ue"}
+{"command": "REGISTER_FAILED", "info": "aaron is already registered with the system"}
+{"command": "REGISTER_SUCCESS", "info": "register success for aaron"}
+
+{"command": "SERVER_ANNOUNCE", "id": "fmnmpp3ai91qb3gc2bvs14g3ue", "load": 5, "hostname": "128.250.13.46", "port": 3570}

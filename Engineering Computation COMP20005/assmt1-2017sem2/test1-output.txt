@@ -1,0 +1,17 @@
+Stage 1
+==========
+Accident: #2693450
+Location: <144.963123, -37.810500>
+Date: 22/5/12
+Time: 06
+Distance to reference: 00.01
+
+Stage 2
+==========
+Accident: #2693450, distance to reference: 00.01 |-
+Accident: #2693456, distance to reference: 29.98 |---------+---------+---------+
+
+Stage 3
+==========
+Number of accidents: 2
+Day of week with the most accidents: Tuesday (2 accident(s))

@@ -1,0 +1,974 @@
+<map>
+
+	<stations>
+		<station>
+			<type>Active</type>
+			<name>Hurstbridge</name>
+			<x_loc>5200</x_loc>
+			<y_loc>7600</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>Eltham</name>
+			<x_loc>4840</x_loc>
+			<y_loc>	7320</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>Greensborough</name>
+			<x_loc>4700</x_loc>
+			<y_loc>7140</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>Rosanna</name>
+			<x_loc>4400</x_loc>
+			<y_loc>6780</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>Fairfield</name>
+			<x_loc>3800</x_loc>
+			<y_loc>6200</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>Clifton Hill</name>
+			<x_loc>3400</x_loc>
+			<y_loc>5900</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>North Richmond</name>
+			<x_loc>3400</x_loc>
+			<y_loc>5500</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>Jolimont</name>
+			<x_loc>3200</x_loc>
+			<y_loc>5000</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>Flinders St</name>
+			<x_loc>2800</x_loc>
+			<y_loc>4800</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+			<station>
+			<type>Active</type>
+			<name>Southern Cross</name>
+			<x_loc>2240</x_loc>
+			<y_loc>4800</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>	
+		<station>
+			<type>Active</type>
+			<name>Flagstaff</name>
+			<x_loc>2240</x_loc>
+			<y_loc>5200</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>Melbourne Central</name>
+			<x_loc>2800</x_loc>
+			<y_loc>5200</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>Ringwood</name>
+			<x_loc>6200</x_loc>
+			<y_loc>4800</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>		
+		<station>
+			<type>Active</type>
+			<name>Lilydale</name>
+			<x_loc>6800</x_loc>
+			<y_loc>5300</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>		
+		<station>
+			<type>Active</type>
+			<name>Belgrave</name>
+			<x_loc>7200</x_loc>
+			<y_loc>4000</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>		
+		<station>
+			<type>Active</type>
+			<name>Camberwell</name>
+			<x_loc>4400</x_loc>
+			<y_loc>4800</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>	
+		<station>
+			<type>Active</type>
+			<name>Alamein</name>
+			<x_loc>5000</x_loc>
+			<y_loc>4200</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>	
+		<station>
+			<type>Active</type>
+			<name>Burnley</name>
+			<x_loc>3800</x_loc>
+			<y_loc>4800</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>Glen Waverley</name>
+			<x_loc>5000</x_loc>
+			<y_loc>3600</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>Richmond</name>
+			<x_loc>3400</x_loc>
+			<y_loc>4800</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>South Yarra</name>
+			<x_loc>3400</x_loc>
+			<y_loc>4500</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>Sandringham</name>
+			<x_loc>3400</x_loc>
+			<y_loc>3000</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>Epping</name>
+			<x_loc>3400</x_loc>
+			<y_loc>7800</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>	
+		<station>
+			<type>Active</type>
+			<name>Pakenham</name>
+			<x_loc>5800</x_loc>
+			<y_loc>2300</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>Caulfield</name>
+			<x_loc>3950</x_loc>
+			<y_loc>3850</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>Frankston</name>
+			<x_loc>3950</x_loc>
+			<y_loc>1500</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>Craigieburn</name>
+			<x_loc>2240</x_loc>
+			<y_loc>7700</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>		
+		<station>
+			<type>Active</type>
+			<name>North Melbourne</name>
+			<x_loc>2240</x_loc>
+			<y_loc>5560</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>Macaulay</name>
+			<x_loc>2440</x_loc>
+			<y_loc>5700</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>	
+		<station>
+			<type>Active</type>
+			<name>Upfield</name>
+			<x_loc>2440</x_loc>
+			<y_loc>7400</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>	
+		<station>
+			<type>Active</type>
+			<name>North Melbourne</name>
+			<x_loc>2240</x_loc>
+			<y_loc>5560</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>Sunshine</name>
+			<x_loc>1200</x_loc>
+			<y_loc>5560</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>Sydenham</name>
+			<x_loc>700</x_loc>
+			<y_loc>6100</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>Footscray</name>
+			<x_loc>1850</x_loc>
+			<y_loc>5560</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>Williamstown</name>
+			<x_loc>1840</x_loc>
+			<y_loc>4200</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>Newport</name>
+			<x_loc>1840</x_loc>
+			<y_loc>4700</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>Seaholme</name>
+			<x_loc>1840</x_loc>
+			<y_loc>4700</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+		<station>
+			<type>Active</type>
+			<name>Werribee</name>
+			<x_loc>700</x_loc>
+			<y_loc>4100</y_loc>
+			<router>simple</router>
+			<max_passengers> 100 </max_passengers>
+		</station>
+	</stations>
+
+	<lines>
+		<line>
+			<name>Hurstbridge</name>
+			<station_colour>
+				<red>20</red>
+				<green>93</green>
+				<blue>166</blue>
+			</station_colour>
+			<line_colour>
+				<red>84</red>
+				<green>195</green>
+				<blue>250</blue>
+			</line_colour>
+			<stations>
+				<station>
+					<name>Hurstbridge</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Eltham</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Greensborough</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Rosanna</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Fairfield</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Clifton Hill</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>North Richmond</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Jolimont</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Flinders St</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Southern Cross</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Flagstaff</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Melbourne Central</name>
+					<double>true</double>
+				</station>
+			</stations>
+		</line>
+		<line>
+			<name>Epping</name>
+			<station_colour>
+				<red>90</red>
+				<green>93</green>
+				<blue>166</blue>
+			</station_colour>
+			<line_colour>
+				<red>110</red>
+				<green>195</green>
+				<blue>250</blue>
+			</line_colour>
+			<stations>
+				<station>
+					<name>Epping</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Clifton Hill</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>North Richmond</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Jolimont</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Flinders St</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Southern Cross</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Flagstaff</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Melbourne Central</name>
+					<double>true</double>
+				</station>
+			</stations>
+		</line>
+		<line>
+			<name>Lilydale</name>
+			<station_colour>
+				<red>50</red>
+				<green>130</green>
+				<blue>20</blue>
+			</station_colour>
+			<line_colour>
+				<red>60</red>
+				<green>150</green>
+				<blue>40</blue>
+			</line_colour>
+			<stations>
+				<station>
+					<name>Lilydale</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Ringwood</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Camberwell</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Flinders St</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Southern Cross</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Flagstaff</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Melbourne Central</name>
+					<double>true</double>
+				</station>
+			</stations>
+		</line>
+		<line>
+			<name>Belgrave</name>
+			<station_colour>
+				<red>180</red>
+				<green>150</green>
+				<blue>90</blue>
+			</station_colour>
+			<line_colour>
+				<red>200</red>
+				<green>170</green>
+				<blue>110</blue>
+			</line_colour>
+			<stations>
+				<station>
+					<name>Belgrave</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Ringwood</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Camberwell</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Flinders St</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Southern Cross</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Flagstaff</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Melbourne Central</name>
+					<double>true</double>
+				</station>
+			</stations>
+		</line>
+		<line>
+			<name>Alamein</name>
+			<station_colour>
+				<red>90</red>
+				<green>20</green>
+				<blue>90</blue>
+			</station_colour>
+			<line_colour>
+				<red>110</red>
+				<green>40</green>
+				<blue>110</blue>
+			</line_colour>
+			<stations>
+				<station>
+					<name>Alamein</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Camberwell</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Richmond</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Flinders St</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Southern Cross</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Flagstaff</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Melbourne Central</name>
+					<double>true</double>
+				</station>
+			</stations>
+		</line>
+		<line>
+			<name>Glen Waverley</name>
+			<station_colour>
+				<red>120</red>
+				<green>20</green>
+				<blue>190</blue>
+			</station_colour>
+			<line_colour>
+				<red>140</red>
+				<green>40</green>
+				<blue>210</blue>
+			</line_colour>
+			<stations>
+				<station>
+					<name>Glen Waverley</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Burnley</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Richmond</name>
+					<double>true</double>
+				</station>			
+				<station>
+					<name>Flinders St</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Southern Cross</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Flagstaff</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Melbourne Central</name>
+					<double>true</double>
+				</station>
+			</stations>
+		</line>
+		<line>
+			<name>Sandringham</name>
+			<station_colour>
+				<red>180</red>
+				<green>40</green>
+				<blue>10</blue>
+			</station_colour>
+			<line_colour>
+				<red>200</red>
+				<green>70</green>
+				<blue>20</blue>
+			</line_colour>
+			<stations>
+				<station>
+					<name>Sandringham</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>South Yarra</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Richmond</name>
+					<double>true</double>
+				</station>			
+				<station>
+					<name>Flinders St</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Southern Cross</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Flagstaff</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Melbourne Central</name>
+					<double>true</double>
+				</station>
+			</stations>
+		</line>
+		<line>
+			<name>Pakenham</name>
+			<station_colour>
+				<red>220</red>
+				<green>180</green>
+				<blue>10</blue>
+			</station_colour>
+			<line_colour>
+				<red>240</red>
+				<green>200</green>
+				<blue>20</blue>
+			</line_colour>
+			<stations>
+				<station>
+					<name>Pakenham</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Caulfield</name>
+					<double>true</double>
+				</station>		
+				<station>
+					<name>South Yarra</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Richmond</name>
+					<double>true</double>
+				</station>			
+				<station>
+					<name>Flinders St</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Southern Cross</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Flagstaff</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Melbourne Central</name>
+					<double>true</double>
+				</station>
+			</stations>
+		</line>
+		<line>
+			<name>Frankston</name>
+			<station_colour>
+				<red>10</red>
+				<green>10</green>
+				<blue>50</blue>
+			</station_colour>
+			<line_colour>
+				<red>40</red>
+				<green>40</green>
+				<blue>90</blue>
+			</line_colour>
+			<stations>
+				<station>
+					<name>Frankston</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Caulfield</name>
+					<double>true</double>
+				</station>		
+				<station>
+					<name>South Yarra</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Richmond</name>
+					<double>true</double>
+				</station>			
+				<station>
+					<name>Flinders St</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Southern Cross</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Flagstaff</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Melbourne Central</name>
+					<double>true</double>
+				</station>
+			</stations>
+		</line>
+		<line>
+			<name>Craigieburn</name>
+			<station_colour>
+				<red>40</red>
+				<green>40</green>
+				<blue>10</blue>
+			</station_colour>
+			<line_colour>
+				<red>80</red>
+				<green>80</green>
+				<blue>30</blue>
+			</line_colour>
+			<stations>
+				<station>
+					<name>Craigieburn</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>North Melbourne</name>
+					<double>true</double>
+				</station>		
+				<station>
+					<name>Flagstaff</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Melbourne Central</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Flinders St</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Southern Cross</name>
+					<double>true</double>
+				</station>
+			</stations>
+		</line>
+		<line>
+			<name>Upfield</name>
+			<station_colour>
+				<red>190</red>
+				<green>40</green>
+				<blue>0</blue>
+			</station_colour>
+			<line_colour>
+				<red>230</red>
+				<green>80</green>
+				<blue>20</blue>
+			</line_colour>
+			<stations>
+				<station>
+					<name>Upfield</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Macaulay</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>North Melbourne</name>
+					<double>true</double>
+				</station>		
+				<station>
+					<name>Flagstaff</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Melbourne Central</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Flinders St</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Southern Cross</name>
+					<double>true</double>
+				</station>
+			</stations>
+		</line>
+		<line>
+			<name>Sydenham</name>
+			<station_colour>
+				<red>120</red>
+				<green>80</green>
+				<blue>0</blue>
+			</station_colour>
+			<line_colour>
+				<red>150</red>
+				<green>110</green>
+				<blue>20</blue>
+			</line_colour>
+			<stations>
+				<station>
+					<name>Sydenham</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Sunshine</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Footscray</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>North Melbourne</name>
+					<double>true</double>
+				</station>		
+				<station>
+					<name>Flagstaff</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Melbourne Central</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Flinders St</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Southern Cross</name>
+					<double>true</double>
+				</station>
+			</stations>
+		</line>
+		<line>
+			<name>Williamstown</name>
+			<station_colour>
+				<red>120</red>
+				<green>80</green>
+				<blue>0</blue>
+			</station_colour>
+			<line_colour>
+				<red>150</red>
+				<green>110</green>
+				<blue>20</blue>
+			</line_colour>
+			<stations>
+				<station>
+					<name>Williamstown</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Newport</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Footscray</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>North Melbourne</name>
+					<double>true</double>
+				</station>		
+				<station>
+					<name>Flagstaff</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Melbourne Central</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Flinders St</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Southern Cross</name>
+					<double>true</double>
+				</station>
+			</stations>
+		</line>
+		<line>
+			<name>Werribee</name>
+			<station_colour>
+				<red>220</red>
+				<green>180</green>
+				<blue>0</blue>
+			</station_colour>
+			<line_colour>
+				<red>250</red>
+				<green>210</green>
+				<blue>20</blue>
+			</line_colour>
+			<stations>
+				<station>
+					<name>Werribee</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Seaholme</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Newport</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Footscray</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>North Melbourne</name>
+					<double>true</double>
+				</station>		
+				<station>
+					<name>Flagstaff</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Melbourne Central</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Flinders St</name>
+					<double>true</double>
+				</station>
+				<station>
+					<name>Southern Cross</name>
+					<double>true</double>
+				</station>
+			</stations>
+		</line>
+	</lines>
+
+	<trains>
+		<train>
+			<type>BigPassenger</type>
+			<line>Hurstbridge</line>
+			<start>Rosanna</start>
+			<direction>forward</direction>
+		</train>
+		<train>
+			<type>BigPassenger</type>
+			<line>Belgrave</line>
+			<start>Camberwell</start>
+			<direction>forward</direction>
+		</train>
+		
+	</trains>
+</map>

@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1491040401 source:c:\users\zirenxiao\documents\project1\project\project1\main.c
+	"header.h"
+
+1491043484 c:\users\zirenxiao\documents\project1\project\project1\header.h
+	<stdio.h>
+	<stdbool.h>
+	<stdlib.h>
+	<limits.h>
+	<string.h>
+
+1491043089 source:c:\users\zirenxiao\documents\project1\project\project1\scheduler.c
+	"header.h"
+
+1491040401 source:c:\users\zirenxiao\documents\project1\project\project1\input.c
+	"header.h"
+
+1491042882 source:c:\users\zirenxiao\documents\project1\project\project1\memory.c
+	"header.h"
+
+1491043176 source:c:\users\zirenxiao\documents\project1\project\project1\output.c
+	"header.h"
+
+1491041834 source:c:\users\zirenxiao\documents\project1\project\project1\queue.c
+	"header.h"
+
+1491042040 source:c:\users\zirenxiao\documents\project1\project\project1\swap.c
+	"header.h"
+

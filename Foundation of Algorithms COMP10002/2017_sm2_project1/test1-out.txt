@@ -1,0 +1,57 @@
+S1: query = f dow long way
+---
+Down, down, down. Would the fall NEVER come to an end! 'I wonder how
+S2: line = 1, bytes = 68, words = 14
+S3: line = 1, score = 0.668
+---
+many miles I've fallen by this time?' she said aloud. 'I must be getting
+S2: line = 2, bytes = 72, words = 15
+S3: line = 2, score = 0.220
+---
+somewhere near the centre of the earth. Let me see: that would be four
+S2: line = 3, bytes = 70, words = 14
+S3: line = 3, score = 0.223
+---
+thousand miles down, I think--' (for, you see, Alice had learnt several
+S2: line = 4, bytes = 71, words = 12
+S3: line = 4, score = 0.459
+---
+things of this sort in her lessons in the schoolroom, and though this
+S2: line = 5, bytes = 69, words = 13
+S3: line = 5, score = 0.000
+---
+was not a VERY good opportunity for showing off her knowledge, as there
+S2: line = 6, bytes = 71, words = 13
+S3: line = 6, score = 0.226
+---
+was no one to listen to her, still it was good practice to say it over)
+S2: line = 7, bytes = 71, words = 16
+S3: line = 7, score = 0.000
+---
+'--yes, that's about the right distance--but then I wonder what Latitude
+S2: line = 8, bytes = 72, words = 13
+S3: line = 8, score = 0.000
+---
+or Longitude I've got to?' (Alice had no idea what Latitude was, or
+S2: line = 9, bytes = 67, words = 14
+S3: line = 9, score = 0.223
+---
+Longitude either, but thought they were nice grand words to say.)
+S2: line = 10, bytes = 65, words = 11
+S3: line = 10, score = 0.233
+------------------------------------------------
+S4: line = 1, score = 0.668
+Down, down, down. Would the fall NEVER come to an end! 'I wonder how
+---
+S4: line = 4, score = 0.459
+thousand miles down, I think--' (for, you see, Alice had learnt several
+---
+S4: line = 10, score = 0.233
+Longitude either, but thought they were nice grand words to say.)
+---
+S4: line = 6, score = 0.226
+was not a VERY good opportunity for showing off her knowledge, as there
+---
+S4: line = 3, score = 0.223
+somewhere near the centre of the earth. Let me see: that would be four
+---
